@@ -1,0 +1,1225 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101a68">
+<title>BüféApp Admin</title>
+<link rel="icon" href="data:image/webp;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#eef1fb; --surface:#ffffff; --surface2:#f6f8fe; --ink:#0f1533; --muted:#565e86; --line:rgba(16,26,104,.12); --tint:#e4e9fc;
+  --p1:#101a68; --p2:#33459c; --on-p:#ffffff; --link:#24359a;
+  --amber:#f2a33a; --amber-bg:#fdf0da; --amber-ink:#6b4200;
+  --green:#137a52; --green-bg:#dcf4e8; --red:#b83232; --red-bg:#fbe3e3;
+  --shadow:0 1px 2px rgba(16,26,104,.06),0 8px 24px rgba(16,26,104,.08);
+  --head:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --wm-op:.045; --wm-filter:grayscale(1);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#090e2b; --surface:#141c50; --surface2:#18215d; --ink:#eef0ff; --muted:#a2abdc; --line:rgba(255,255,255,.12); --tint:#222d75;
+    --p1:#5a71ee; --p2:#7b90ff; --on-p:#080c28; --link:#a9b8ff;
+    --amber-bg:#3b2b0f; --amber-ink:#ffd9a0; --green:#5fd4a0; --green-bg:#123a2b; --red:#ff9a9a; --red-bg:#4a1c24;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35); --wm-op:.06; --wm-filter:grayscale(1) brightness(3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#090e2b; --surface:#141c50; --surface2:#18215d; --ink:#eef0ff; --muted:#a2abdc; --line:rgba(255,255,255,.12); --tint:#222d75;
+  --p1:#5a71ee; --p2:#7b90ff; --on-p:#080c28; --link:#a9b8ff;
+  --amber-bg:#3b2b0f; --amber-ink:#ffd9a0; --green:#5fd4a0; --green-bg:#123a2b; --red:#ff9a9a; --red-bg:#4a1c24;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35); --wm-op:.06; --wm-filter:grayscale(1) brightness(3);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;font-family:var(--body);font-size:15.5px;line-height:1.45;color:var(--ink);
+  background:radial-gradient(55% 40% at 100% 0%,rgba(113,144,246,.22),transparent 70%),radial-gradient(50% 40% at 30% 100%,rgba(51,69,156,.18),transparent 70%),var(--bg);background-attachment:fixed}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none;padding:0}
+button:disabled{cursor:not-allowed;opacity:.55}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:8px}
+h1,h2,h3{font-family:var(--head);margin:0;letter-spacing:-.01em}
+p{margin:0}
+.wm{position:fixed;inset:0;z-index:0;display:grid;place-items:center;pointer-events:none}
+.wm img{width:min(60vw,440px);height:auto;object-fit:contain;opacity:var(--wm-op);filter:var(--wm-filter)}
+#root{position:relative;z-index:1}
+
+/* ---------- belépés, kapcsolat ---------- */
+.gate{min-height:100vh;display:grid;place-items:center;padding:24px 16px}
+.gate-card{width:min(100%,460px);background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+.gate-card.wide{width:min(100%,640px)}
+.gate-brand{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.crest{width:64px;height:64px;border-radius:18px;background:#fff;display:grid;place-items:center;box-shadow:var(--shadow);flex:none}
+.gate-brand h1{font-size:26px;font-weight:800;line-height:1.1}
+.gate-brand p{color:var(--muted);font-size:14px}
+.gate h2{font-size:20px;margin-bottom:6px}
+.lead{color:var(--muted);margin-bottom:16px}
+.field{display:block;margin-bottom:14px}
+.field>span{display:block;font-weight:600;font-size:14px;margin-bottom:6px}
+.field small{display:block;color:var(--muted);font-size:13px;margin-top:5px}
+.input,.select,textarea.input{width:100%;min-height:46px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface2);padding:10px 12px;font-size:15.5px}
+textarea.input{min-height:160px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.5}
+.input:focus,.select:focus{outline:none;border-color:var(--p2);box-shadow:0 0 0 4px rgba(51,69,156,.16)}
+.err{color:var(--red);font-weight:600;font-size:14.5px;margin:0 0 12px}
+.err:empty{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:12px;font-weight:700;color:var(--on-p);background:linear-gradient(135deg,var(--p1),var(--p2));box-shadow:0 4px 12px rgba(16,26,104,.22);white-space:nowrap}
+.btn.block{width:100%;min-height:50px;font-size:16px}
+.btn.ghost{background:var(--tint);color:var(--ink);box-shadow:none}
+.btn.line{background:transparent;color:var(--ink);border:1.5px solid var(--line);box-shadow:none}
+.btn.danger{background:var(--red-bg);color:var(--red);box-shadow:none}
+.btn.sm{min-height:36px;padding:0 12px;font-size:14px;border-radius:10px}
+.linkbtn{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;padding:4px 0}
+.demo{margin-top:16px;border:1.5px dashed var(--line);border-radius:14px;padding:12px 14px;font-size:14px;color:var(--muted)}
+.demo b{color:var(--ink)}
+.steps{margin:0 0 16px;padding-left:20px;color:var(--muted)}
+.steps li{margin:4px 0}
+.steps b{color:var(--ink)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em;background:var(--tint);padding:1px 6px;border-radius:6px}
+
+/* ---------- váz ---------- */
+.layout{display:grid;grid-template-columns:248px 1fr;min-height:100vh}
+.side{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:6px;padding:20px 14px;color:#fff;background:linear-gradient(170deg,#101a68 0%,#23338a 60%,#33459c 100%)}
+.side .who{display:flex;align-items:center;gap:12px;padding:0 6px 16px;border-bottom:1px solid rgba(255,255,255,.14);margin-bottom:10px}
+.side .crest{width:48px;height:48px;border-radius:14px}
+.side .who b{display:block;font-family:var(--head);font-size:18px;line-height:1.1}
+.side .who small{display:block;opacity:.75;font-size:12.5px;line-height:1.3}
+.nav{display:flex;flex-direction:column;gap:2px}
+.nav button{display:flex;align-items:center;gap:12px;min-height:44px;padding:0 12px;border-radius:12px;color:rgba(255,255,255,.82);font-weight:600;text-align:left}
+.nav button:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav button[aria-current="page"]{background:#fff;color:#101a68}
+.side .foot{margin-top:auto;display:flex;flex-direction:column;gap:8px;padding:12px 6px 0;border-top:1px solid rgba(255,255,255,.14);font-size:13px}
+.side .foot .me{opacity:.85}
+.side .foot button{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-weight:600;min-height:38px}
+.mode{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:10px;width:max-content}
+.mode.demo-m{background:var(--amber);color:#3a2400}
+.mode.live{background:rgba(95,212,160,.2);color:#b9f5d8}
+.main{padding:28px 32px 60px;min-width:0}
+.page{max-width:1120px;margin:0 auto}
+.ph{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.ph h1{font-size:30px;font-weight:800;line-height:1.1}
+.ph p{color:var(--muted);margin-top:4px}
+.ph .actions{display:flex;gap:8px;flex-wrap:wrap}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow);margin-bottom:18px}
+.panel h2{font-size:19px;margin-bottom:12px}
+.panel h2 small{font-family:var(--body);font-weight:500;color:var(--muted);font-size:14px;margin-left:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid2>.panel{margin-bottom:0}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-family:var(--head);font-size:30px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi span{color:var(--muted);font-size:14px}
+.kpi.hl{background:linear-gradient(145deg,var(--p1),var(--p2));color:var(--on-p);border-color:transparent}
+.kpi.hl span{color:inherit;opacity:.85}
+
+.check{list-style:none;margin:0;padding:0}
+.check li{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.check li:last-child{border:0}
+.check .dot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--tint);color:var(--muted);font-weight:800;font-size:13px}
+.check .done .dot{background:var(--green-bg);color:var(--green)}
+.check .t{flex:1}
+.check .t b{display:block}
+.check .t small{color:var(--muted)}
+
+/* ---------- táblázat ---------- */
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.search{position:relative;flex:1;min-width:220px}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.search .input{padding-left:40px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{min-height:36px;padding:0 12px;border-radius:18px;border:1.5px solid var(--line);background:var(--surface);font-weight:600;font-size:14px}
+.chip[aria-pressed="true"]{border-color:var(--p2);background:var(--tint)}
+.chip .n{color:var(--muted);font-weight:500;margin-left:4px}
+.tablewrap{overflow-x:auto;margin:0 -20px;padding:0 20px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-size:13px;color:var(--muted);font-weight:600;padding:8px 10px;border-bottom:1.5px solid var(--line);white-space:nowrap}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.mono{font-variant-numeric:tabular-nums;letter-spacing:.02em}
+tr.off td{color:var(--muted)}
+.tag{display:inline-block;font-size:12.5px;font-weight:700;padding:2px 9px;border-radius:10px;background:var(--tint);color:var(--link)}
+.tag.bufes{background:var(--amber-bg);color:var(--amber-ink)}
+.tag.admin{background:var(--p1);color:var(--on-p)}
+.tag.off{background:var(--red-bg);color:var(--red)}
+.tag.ok{background:var(--green-bg);color:var(--green)}
+.pager{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;color:var(--muted);font-size:14px}
+.empty{text-align:center;color:var(--muted);padding:36px 12px}
+.empty b{display:block;color:var(--ink);font-family:var(--head);font-size:19px;margin-bottom:6px}
+.spinner{width:30px;height:30px;margin:26px auto;border-radius:50%;border:3.5px solid var(--tint);border-top-color:var(--p2);animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- étlap ---------- */
+.cat-h{font-size:16px;margin:14px 0 4px;color:var(--muted);font-family:var(--body);font-weight:700}
+.prod{display:grid;grid-template-columns:44px 1fr auto auto auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.prod:last-child{border:0}
+.prod .emo{width:44px;height:44px;border-radius:12px;background:var(--tint);display:grid;place-items:center;font-size:24px}
+.prod b{display:block}
+.prod small{color:var(--muted)}
+.prod .price{font-family:var(--head);font-weight:700;font-size:16px;white-space:nowrap}
+.prod.off{opacity:.55}
+.switch{position:relative;width:48px;height:28px;border-radius:14px;background:var(--line);flex:none;transition:background .15s}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:transform .15s}
+.switch[aria-checked="true"]{background:var(--green)}
+.switch[aria-checked="true"]::after{transform:translateX(20px)}
+.brk{display:grid;grid-template-columns:1fr 120px auto auto;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.brk:last-child{border:0}
+.emojis{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.emojis button{width:38px;height:38px;border-radius:10px;background:var(--tint);font-size:20px}
+.allerg{display:flex;flex-wrap:wrap;gap:6px}
+.allerg label{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 10px;border-radius:17px;border:1.5px solid var(--line);font-size:14px;cursor:pointer}
+.allerg input{accent-color:var(--p2)}
+.allerg label:has(input:checked){border-color:var(--p2);background:var(--tint)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+.inline{display:flex;align-items:center;gap:10px;min-height:44px}
+
+/* ---------- rendelések, statisztika ---------- */
+.daynav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.daynav .input{width:auto;min-height:40px}
+.prep{display:grid;grid-template-columns:36px 1fr 60px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.prep:last-child{border:0}
+.prep .bar,.hbar{height:8px;border-radius:4px;background:var(--tint);margin-top:5px;overflow:hidden}
+.prep .bar i,.hbar i{display:block;height:100%;background:linear-gradient(90deg,var(--p1),var(--p2))}
+.prep b.q{font-family:var(--head);font-size:24px;font-weight:800;text-align:right}
+.brk-h{font-size:16px;margin:16px 0 6px;display:flex;justify-content:space-between;gap:8px}
+.brk-h small{font-family:var(--body);color:var(--muted);font-weight:500}
+.bars{display:flex;align-items:flex-end;gap:6px;height:180px;padding-top:10px;border-bottom:1.5px solid var(--line)}
+.bars .b{flex:1;min-width:10px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:4px}
+.bars .b i{display:block;width:100%;max-width:38px;border-radius:6px 6px 0 0;background:linear-gradient(180deg,var(--p2),var(--p1));min-height:2px}
+.bars .b span{font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.bars .b em{font-style:normal;font-size:11.5px;font-weight:700}
+.blabels{display:flex;gap:6px;margin-top:6px}
+.blabels span{flex:1;min-width:10px;text-align:center;font-size:11.5px;color:var(--muted)}
+
+/* ---------- beállítások ---------- */
+.set{display:grid;grid-template-columns:1fr 260px;gap:20px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.set:last-of-type{border:0}
+.set b{display:block}
+.set small{display:block;color:var(--muted);margin-top:2px}
+.preview{margin-top:8px;font-size:14px;background:var(--red-bg);color:var(--red);border-radius:10px;padding:8px 12px;font-weight:600}
+
+/* ---------- importálás ---------- */
+.stepper-h{display:flex;gap:6px;margin-bottom:16px}
+.stepper-h span{flex:1;height:5px;border-radius:3px;background:var(--tint)}
+.stepper-h span.on{background:linear-gradient(90deg,var(--p1),var(--p2))}
+.mapgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.prevtable{max-height:300px;overflow:auto;border:1px solid var(--line);border-radius:12px}
+.prevtable table{font-size:13.5px}
+.prevtable td,.prevtable th{padding:6px 10px}
+.prevtable tr.bad td{background:var(--red-bg);color:var(--red)}
+.sumrow{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.progress{height:14px;border-radius:7px;background:var(--tint);overflow:hidden;margin:18px 0 8px}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--p1),var(--p2));transition:width .2s}
+.note{background:var(--amber-bg);color:var(--amber-ink);border-radius:12px;padding:10px 14px;font-size:14.5px;margin:10px 0}
+.warnbox{background:var(--red-bg);color:var(--red);border-radius:12px;padding:10px 14px;font-size:14.5px;margin:10px 0;font-weight:600}
+.okbox{background:var(--green-bg);color:var(--green);border-radius:12px;padding:10px 14px;font-size:14.5px;margin:10px 0;font-weight:600}
+label.cb{display:flex;gap:10px;align-items:flex-start;cursor:pointer;margin:10px 0}
+label.cb input{margin-top:4px;width:18px;height:18px;accent-color:var(--p2);flex:none}
+label.cb small{display:block;color:var(--muted)}
+
+/* ---------- modal ---------- */
+.mback{position:fixed;inset:0;z-index:50;background:rgba(8,12,48,.55);display:grid;place-items:center;padding:16px;animation:fade .15s}
+@keyframes fade{from{opacity:0}}
+.mdl{width:min(100%,560px);max-height:calc(100vh - 32px);overflow:auto;background:var(--surface);border-radius:22px;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.mdl.wide{width:min(100%,920px)}
+.mh{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.mh h2{font-size:22px}
+.x{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--tint);flex:none}
+.mf{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
+.mf .r{display:flex;gap:8px;margin-left:auto}
+
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,160%);z-index:60;max-width:min(92vw,520px);background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:14px;font-weight:600;box-shadow:0 10px 28px rgba(0,0,0,.3);transition:transform .25s}
+.toast{opacity:0;visibility:hidden}
+.toast.show{transform:translate(-50%,0);opacity:1;visibility:visible}
+.toast.bad{background:var(--red);color:#fff}
+
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  .side{position:sticky;top:0;z-index:20;height:auto;flex-direction:row;align-items:center;gap:8px;padding:10px 12px;overflow-x:auto}
+  .side .who{border:0;padding:0;margin:0}
+  .side .who>div:not(.crest),.side .foot .me,.side .foot .mode{display:none}
+  .side .crest{width:40px;height:40px}
+  .kpi b{font-size:24px}
+  .nav{flex-direction:row}
+  .nav button{min-height:40px;padding:0 10px;white-space:nowrap}
+  .nav button span{display:none}
+  .nav button[aria-current="page"] span{display:inline}
+  .side .foot{margin:0 0 0 auto;padding:0;border:0;flex-direction:row}
+  .side .foot button span{display:none}
+  .main{padding:18px 16px 60px}
+  .kpis{grid-template-columns:1fr 1fr}
+  .grid2,.row2,.row3,.mapgrid{grid-template-columns:1fr}
+  .set{grid-template-columns:1fr}
+  .ph h1{font-size:25px}
+  .prod{grid-template-columns:40px 1fr auto;row-gap:6px}
+  .prod .sw,.prod .ed{grid-column:auto}
+  .brk{grid-template-columns:1fr 90px}
+  .hide-m{display:none}
+}
+@media print{
+  body{background:#fff;color:#000}
+  .side,.wm,.noprint,.toast{display:none!important}
+  .layout{display:block}
+  .main{padding:0}
+  .panel{box-shadow:none;border:0;padding:0}
+  .kpi{box-shadow:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+<div class="wm" id="wm" aria-hidden="true"></div>
+<div id="root"></div>
+<div id="modal"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript>Az admin felület működéséhez JavaScript szükséges.</noscript>
+<script>
+(() => {
+'use strict';
+/* =====================================================================
+   KAPCSOLAT AZ ADATBÁZISHOZ
+   Ha mindkettő üres, az app DEMÓ módban fut (minden adat csak ezen a
+   gépen/telefonon van). A Supabase-projekt beállítása után ide kerül a
+   Project URL és a Publishable (anon) key. Ezek nyilvánosak lehetnek,
+   a védelmet az adatbázis függvényei adják.
+   ===================================================================== */
+const BUFE_CONFIG = {
+  supabaseUrl: 'https://skrcjreevrrwuceaoauq.supabase.co',
+  supabaseKey: 'sb_publishable_aFhrLQU9hWZYIBJTl9jbTQ_kdi-5K4J'
+};
+
+/* Éles változatban (build.py --live) igaz: ilyenkor a demó mód teljesen ki van kapcsolva. */
+const LIVE_BUILD = true;
+
+const SCHOOL_DEFAULT = 'Kaposvári SZC Eötvös Loránd Technikum és Kollégium';
+const LOGO_URL = 'data:image/webp;base64,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';
+
+const isDemo = () => !LIVE_BUILD && !API.remote;
+
+/* ---------- apró segédek ---------- */
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pad = n => String(n).padStart(2, '0');
+const iso = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const parseDay = s => { const [y,m,d] = String(s).slice(0,10).split('-').map(Number); return new Date(y, m-1, d); };
+const addDays = (s, n) => { const d = parseDay(s); d.setDate(d.getDate() + n); return iso(d); };
+const ft = n => String(Math.round(n || 0)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' Ft';
+const MONTHS_S = ['jan.','febr.','márc.','ápr.','máj.','jún.','júl.','aug.','szept.','okt.','nov.','dec.'];
+const WD = ['vasárnap','hétfő','kedd','szerda','csütörtök','péntek','szombat'];
+const WD_SUB = ['vasárnapra','hétfőre','keddre','szerdára','csütörtökre','péntekre','szombatra'];
+const WD_S = ['V','H','K','Sze','Cs','P','Szo'];
+const dayLong = s => { const d = parseDay(s); return `${WD[d.getDay()]}, ${MONTHS_S[d.getMonth()]} ${d.getDate()}.`; };
+const todayIso = () => iso(new Date());
+const givenName = n => String(n || '').trim().split(/\s+/).slice(-1)[0];
+const initials = n => String(n || '').trim().split(/\s+/).map(w => w[0] || '').slice(0,2).join('').toUpperCase();
+const maskId = id => String(id).slice(0,4) + '•••' + String(id).slice(-4);
+const hhmmToMin = s => { const [h, m] = String(s || '0:0').split(':').map(Number); return (h || 0) * 60 + (m || 0); };
+
+function schoolDays(n = 5, from = new Date()){
+  const out = [], d = new Date(from); d.setHours(0,0,0,0);
+  while (out.length < n){ const w = d.getDay(); if (w !== 0 && w !== 6) out.push(iso(d)); d.setDate(d.getDate()+1); }
+  return out;
+}
+
+/* Születési dátum értelmezése sokféle írásmódból: 2007-10-20, 2007.10.20., 2007. 10. 20., 20071020 */
+function normBirth(v){
+  const d = String(v == null ? '' : v).replace(/\D/g, '');
+  if (d.length !== 8) return null;
+  const y = +d.slice(0,4), m = +d.slice(4,6), day = +d.slice(6,8);
+  const t = new Date(y, m-1, day);
+  if (y < 1900 || y > 2100 || t.getFullYear() !== y || t.getMonth() !== m-1 || t.getDate() !== day) return null;
+  return `${y}-${pad(m)}-${pad(day)}`;
+}
+
+/* ---------- tárolás (localStorage, ha nem érhető el: memória) ---------- */
+const _mem = {};
+const store = {
+  get(k, d = null){ try { const v = localStorage.getItem(k); if (v != null) return JSON.parse(v); } catch(e){} return k in _mem ? _mem[k] : d; },
+  set(k, v){ _mem[k] = v; try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} },
+  del(k){ delete _mem[k]; try { localStorage.removeItem(k); } catch(e){} }
+};
+
+/* ---------- ikonok ---------- */
+const ICONS = {
+  bell:'<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>',
+  home:'<path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>',
+  user:'<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+  users:'<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  star:'<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+  search:'<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>',
+  plus:'<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>',
+  minus:'<line x1="5" y1="12" x2="19" y2="12"/>',
+  x:'<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',
+  chev:'<polyline points="9 18 15 12 9 6"/>',
+  back:'<path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/>',
+  receipt:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>',
+  coffee:'<path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>',
+  chart:'<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>',
+  lock:'<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+  shield:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  swap:'<polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>',
+  alert:'<path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
+  refresh:'<polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>',
+  upload:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>',
+  edit:'<path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>',
+  trash:'<polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
+  settings:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
+  printer:'<polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>',
+  logout:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>',
+  check:'<polyline points="20 6 9 17 4 12"/>',
+  db:'<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>',
+  logoff:'<path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/>'
+};
+const ic = (n, s = 20, fill = false) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="${fill ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${ICONS[n] || ''}</svg>`;
+const logo = (size, alt = 'Iskola logó') => `<img src="${LOGO_URL}" width="${size}" height="${size}" alt="${esc(alt)}" style="object-fit:contain">`;
+
+/* ---------- hibaüzenetek (az adatbázis hibakódjai magyarul) ---------- */
+const HIBAK = {
+  halozat: 'Nincs kapcsolat a szerverrel. Ellenőrizd az internetet, és próbáld újra.',
+  nincs_belepve: 'A belépésed lejárt vagy megszűnt. Lépj be újra.',
+  nincs_jogosultsag: 'Ehhez nincs jogosultságod.',
+  lezarult: 'Erre a napra már lezárult a rendelés.',
+  lemondasi_hatarido_lejart: 'Ezt a rendelést már nem lehet lemondani, lejárt a határidő.',
+  mar_lemondva: 'Ezt a rendelést már lemondtad.',
+  nincs_ilyen_rendeles: 'Ez a rendelés nem található.',
+  ures_kosar: 'A kosár üres.',
+  tul_sok_tetel: 'Túl sok tétel egy rendelésben.',
+  ismeretlen_termek: 'Egy termék időközben lekerült az étlapról. Frissítsd az étlapot.',
+  ismeretlen_szunet: 'Ez a szünet már nem választható.',
+  rossz_mennyiseg: 'Hibás mennyiség.',
+  csak_diak: 'Rendelést csak diák adhat le.',
+  mar_van_admin: 'Már van admin felhasználó. Lépj be azzal.',
+  rossz_azonosito: 'Az oktatási azonosító 11 számjegyből áll.',
+  hianyzo_nev: 'Add meg a nevet.',
+  hianyzo_szuletes: 'Új felhasználóhoz meg kell adni a születési dátumot.',
+  rossz_szerep: 'Ismeretlen szerepkör.',
+  mar_letezik: 'Ezzel az azonosítóval már van felhasználó.',
+  sajat_admin_jog: 'A saját admin jogodat nem veheted el, és magadat nem törölheted.',
+  rossz_ar: 'Az ár 0 és 100 000 Ft között lehet.',
+  rossz_ido: 'Az időpontot így add meg: 7:30',
+  rossz_ertek: 'Hibás érték.',
+  tul_nagy_resz: 'Egyszerre legfeljebb 200 sor tölthető fel.',
+  ures_lista: 'A lista üres.',
+  nincs_ilyen_termek: 'Ez a termék már nem létezik.'
+};
+const hibaSzoveg = e => HIBAK[e && e.code] || HIBAK[e && e.message] || (e && e.message) || 'Váratlan hiba történt.';
+
+/* =====================================================================
+   API – ugyanazokat a függvényeket hívja a Supabase-ben, vagy demó
+   módban a böngészőben futó utánzatot (Mock).
+   ===================================================================== */
+const API = {
+  remote: !!(BUFE_CONFIG.supabaseUrl && BUFE_CONFIG.supabaseKey),
+  url: BUFE_CONFIG.supabaseUrl,
+  key: BUFE_CONFIG.supabaseKey,
+  configure(url, key){
+    this.url = String(url || '').trim().replace(/\/+$/, '');
+    this.key = String(key || '').trim();
+    this.remote = !!(this.url && this.key);
+  },
+  async call(fn, args = {}){
+    if (!this.remote) return Mock.call(fn, JSON.parse(JSON.stringify(args)));
+    const headers = { 'Content-Type': 'application/json', 'apikey': this.key };
+    if (this.key.startsWith('eyJ')) headers.Authorization = 'Bearer ' + this.key;
+    let res;
+    try {
+      res = await fetch(`${this.url}/rest/v1/rpc/${fn}`, { method:'POST', headers, body: JSON.stringify(args) });
+    } catch (e) {
+      const err = new Error('halozat'); err.code = 'halozat'; throw err;
+    }
+    let body = null;
+    try { body = await res.json(); } catch (e) {}
+    if (!res.ok){
+      const code = body && (body.message || body.error || body.msg) || ('HTTP ' + res.status);
+      const err = new Error(code); err.code = code; err.status = res.status; throw err;
+    }
+    return body;
+  }
+};
+
+const Mock = { demoUsers: [], reset(){}, async call(){ const e = new Error('halozat'); e.code = 'halozat'; throw e; } };
+/* =====================================================================
+   BüféApp – Admin felület (iskolai titkárság, büfé vezetője)
+   ===================================================================== */
+const CONNKEY = 'bufe.admin.conn';
+const TOKKEY = 'bufe.admin.tok';
+const CHUNK = 40;
+const ALLERGENEK = ['glutén','tej','tojás','földimogyoró','mogyoró','szója','hal','rákfélék','puhatestűek','zeller','mustár','szezám','kén-dioxid','csillagfürt'];
+const EMOJIK = ['🥐','🥪','🥯','🧀','🥟','🥣','🥙','🌭','🍕','🫓','🍔','🌯','🥗','🍝','🍫','🍪','🍩','🧁','🍎','🍌','🍊','💧','🥛','🧃','🥤','☕','🍵','🍽️'];
+
+const sess = {
+  get(){ try { return sessionStorage.getItem(TOKKEY); } catch (e) { return A._tok || null; } },
+  set(v){ A._tok = v; try { sessionStorage.setItem(TOKKEY, v); } catch (e) {} },
+  del(){ A._tok = null; try { sessionStorage.removeItem(TOKKEY); } catch (e) {} }
+};
+
+const A = {
+  view:'boot', token:null, user:null, page:'home', err:'', busy:false, fixedConn: API.remote,
+  // diákok
+  q:'', role:'', pageNo:0, list:null,
+  // étlap
+  etlap:null,
+  // rendelések
+  day:null, dayData:null,
+  // statisztika
+  range:'week', stat:null,
+  // import
+  imp:null
+};
+
+/* ---------- segédek ---------- */
+let toastTimer;
+function toast(msg, bad){ const t = $('#toast'); t.textContent = msg; t.classList.toggle('bad', !!bad); t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 3200); }
+async function call(fn, args = {}){
+  try { return await API.call(fn, { p_token: A.token, ...args }); }
+  catch (e) {
+    if (e.code === 'nincs_belepve' || e.code === 'nincs_jogosultsag'){ logout('A belépésed lejárt. Lépj be újra.'); }
+    throw e;
+  }
+}
+const fail = e => toast(hibaSzoveg(e), true);
+const nextSchoolDay = () => schoolDays(1)[0];
+function rangeDates(r){
+  const t = new Date(); t.setHours(0,0,0,0);
+  const mon = new Date(t); mon.setDate(t.getDate() - ((t.getDay() + 6) % 7));
+  if (r === 'week'){ const s = new Date(mon); s.setDate(mon.getDate() + 6); return [iso(mon), iso(s), 'Ez a hét']; }
+  if (r === 'last'){ const a = new Date(mon); a.setDate(mon.getDate() - 7); const b = new Date(mon); b.setDate(mon.getDate() - 1); return [iso(a), iso(b), 'Előző hét']; }
+  if (r === 'month'){ const a = new Date(t.getFullYear(), t.getMonth(), 1), b = new Date(t.getFullYear(), t.getMonth() + 1, 0); return [iso(a), iso(b), 'Ez a hónap']; }
+  const a = new Date(t); a.setDate(t.getDate() - 29); return [iso(a), iso(t), 'Elmúlt 30 nap'];
+}
+
+/* =====================================================================
+   INDULÁS, KAPCSOLAT, BELÉPÉS
+   ===================================================================== */
+async function boot(){
+  if (!A.fixedConn){ const c = store.get(CONNKEY, null); if (c && c.url && c.key) API.configure(c.url, c.key); }
+  if (LIVE_BUILD && !API.remote){ A.view = 'connect'; A.err = ''; render(); return; }
+  const tok = sess.get();
+  if (tok){
+    try {
+      const d = await API.call('app_adatok', { p_token: tok });
+      if (d.felhasznalo.szerep === 'admin'){ A.token = tok; A.user = d.felhasznalo; A.view = 'main'; render(); return goto(A.page); }
+    } catch (e) {}
+    sess.del();
+  }
+  try {
+    const r = await API.call('admin_van_admin', {});
+    A.view = r.van ? 'login' : 'first';
+  } catch (e) {
+    A.view = 'connect'; A.err = 'Nem sikerült elérni az adatbázist: ' + hibaSzoveg(e);
+  }
+  render();
+}
+
+function gateHead(){
+  return `<div class="gate-brand"><div class="crest">${logo(52, SCHOOL_DEFAULT + ' logó')}</div><div><h1>BüféApp Admin</h1><p>${esc(SCHOOL_DEFAULT)}</p></div></div>`;
+}
+function viewLogin(){
+  return `<main class="gate"><form class="gate-card" id="login-form" novalidate>
+    ${gateHead()}
+    <h2>Belépés</h2>
+    <p class="lead">Csak admin jogú felhasználó léphet be. A jelszó a születési dátumod.</p>
+    <label class="field"><span>Oktatási azonosító</span><input class="input" id="l-id" inputmode="numeric" maxlength="11" autocomplete="username" placeholder="11 számjegy"></label>
+    <label class="field"><span>Születési dátum</span><input class="input" id="l-birth" inputmode="numeric" maxlength="10" placeholder="ÉÉÉÉ-HH-NN"></label>
+    <p class="err" id="err" role="alert">${esc(A.err)}</p>
+    <button class="btn block" type="submit"${A.busy ? ' disabled' : ''}>${A.busy ? 'Ellenőrzés…' : 'Belépés'}</button>
+    ${isDemo() ? `<div class="demo"><b>Demó mód.</b> Még nincs adatbázis bekötve, minden adat csak ebben a böngészőben van. Próbafiók: <code>70000000000</code> / <code>1980-01-01</code>
+       <br><button type="button" class="linkbtn" data-act="demo-login">Belépés a próbafiókkal</button></div>` : ''}
+    ${!A.fixedConn ? `<p style="margin-top:14px;text-align:center"><button type="button" class="linkbtn" data-act="connect">${API.remote ? 'Adatbázis-kapcsolat módosítása' : 'Saját adatbázis bekötése'}</button></p>` : ''}
+  </form></main>`;
+}
+function viewFirst(){
+  return `<main class="gate"><form class="gate-card" id="first-form" novalidate>
+    ${gateHead()}
+    <div class="okbox">${ic('check', 18)} Az adatbázis kapcsolat működik.</div>
+    <h2>Első admin létrehozása</h2>
+    <p class="lead">Még nincs admin felhasználó. Aki most létrehozza, az kezeli a diákokat, az étlapot és a beállításokat. Később további adminokat is felvehetsz.</p>
+    <label class="field"><span>Neved</span><input class="input" id="f-nev" autocomplete="name"></label>
+    <label class="field"><span>Oktatási azonosítód</span><input class="input" id="f-id" inputmode="numeric" maxlength="11" placeholder="11 számjegy"><small>Tanároknak is van oktatási azonosítója. Ezzel és a születési dátumoddal fogsz belépni.</small></label>
+    <label class="field"><span>Születési dátumod</span><input class="input" id="f-birth" inputmode="numeric" maxlength="10" placeholder="ÉÉÉÉ-HH-NN"></label>
+    <p class="err" id="err" role="alert">${esc(A.err)}</p>
+    <button class="btn block" type="submit"${A.busy ? ' disabled' : ''}>Admin létrehozása és belépés</button>
+  </form></main>`;
+}
+function viewConnect(){
+  const c = store.get(CONNKEY, {}) || {};
+  return `<main class="gate"><form class="gate-card wide" id="conn-form" novalidate>
+    ${gateHead()}
+    <h2>Adatbázis bekötése</h2>
+    <p class="lead">A diákok, az étlap és a rendelések egy ingyenes Supabase-adatbázisban lesznek. Ezt egyszer kell beállítani.</p>
+    <ol class="steps">
+      <li>Regisztrálj a <b>supabase.com</b> oldalon, és hozz létre egy új projektet (régió: <b>Central EU (Frankfurt)</b>).</li>
+      <li>Bal oldalt <b>SQL Editor</b> → <b>New query</b>. Másold be a <code>bufeapp-adatbazis.sql</code> fájl teljes tartalmát, majd <b>Run</b>.</li>
+      <li>Bal oldalt <b>Project Settings</b> → <b>API Keys</b> (és <b>Data API</b>). Innen másold ide a két értéket.</li>
+    </ol>
+    <label class="field"><span>Project URL</span><input class="input" id="c-url" placeholder="https://abcdefgh.supabase.co" value="${esc(c.url || '')}"></label>
+    <label class="field"><span>Publishable key (vagy régebbi nevén anon public key)</span><input class="input" id="c-key" placeholder="sb_publishable_…" value="${esc(c.key || '')}"><small>Ez a kulcs nyilvános, a diák appba is ez kerül. A <b>secret / service_role</b> kulcsot soha ne add meg sehol!</small></label>
+    <p class="err" id="err" role="alert">${esc(A.err)}</p>
+    <div class="mf" style="margin-top:6px">
+      ${LIVE_BUILD ? '<span></span>' : '<button type="button" class="btn line" data-act="use-demo">Maradok a demó módnál</button>'}
+      <button class="btn" type="submit"${A.busy ? ' disabled' : ''}>${A.busy ? 'Kapcsolódás…' : 'Kapcsolat tesztelése és mentése'}</button>
+    </div>
+  </form></main>`;
+}
+
+async function doLogin(id, birth){
+  A.busy = true; A.err = ''; render();
+  let r;
+  try { r = await API.call('app_belepes', { p_azonosito:id, p_szuletes:birth }); } catch (e) { r = { ok:false, kod:'halozat', e }; }
+  A.busy = false;
+  if (!r.ok){
+    A.err = r.kod === 'zarolva' ? `Túl sok hibás próbálkozás. Próbáld újra ${r.perc || 15} perc múlva.` : r.kod === 'halozat' ? hibaSzoveg(r.e) : 'Hibás azonosító vagy születési dátum.';
+    render(); $('#l-id').value = id; return;
+  }
+  if (r.felhasznalo.szerep !== 'admin'){
+    API.call('app_kilepes', { p_token:r.token }).catch(() => {});
+    A.err = 'Ennek a felhasználónak nincs admin joga. Egy meglévő admin tudja megadni.'; render(); return;
+  }
+  enter(r.token, r.felhasznalo);
+}
+function enter(token, user){
+  A.token = token; A.user = user; sess.set(token); A.err = ''; A.view = 'main'; A.page = 'home';
+  render(); goto('home');
+}
+function logout(msg){
+  if (A.token) API.call('app_kilepes', { p_token:A.token }).catch(() => {});
+  sess.del(); A.token = null; A.user = null; A.view = 'login'; A.err = msg || ''; closeModal(); render();
+}
+
+/* =====================================================================
+   VÁZ
+   ===================================================================== */
+const PAGES = [
+  ['home','Áttekintés','home'], ['diakok','Diákok','users'], ['etlap','Étlap','coffee'],
+  ['rendelesek','Rendelések','receipt'], ['stat','Statisztika','chart'], ['beall','Beállítások','settings']
+];
+function render(){
+  const r = $('#root');
+  if (A.view === 'boot'){ r.innerHTML = `<main class="gate"><div class="spinner" aria-label="Betöltés"></div></main>`; return; }
+  if (A.view === 'login') r.innerHTML = viewLogin();
+  else if (A.view === 'first') r.innerHTML = viewFirst();
+  else if (A.view === 'connect') r.innerHTML = viewConnect();
+  else r.innerHTML = `<div class="layout">
+    <aside class="side">
+      <div class="who"><div class="crest">${logo(40, SCHOOL_DEFAULT + ' logó')}</div><div><b>BüféApp</b><small>Admin felület</small></div></div>
+      <nav class="nav" aria-label="Admin menü">${PAGES.map(([id, label, i]) => `<button data-act="page" data-page="${id}"${A.page === id ? ' aria-current="page"' : ''}>${ic(i, 20)}<span>${label}</span></button>`).join('')}</nav>
+      <div class="foot">
+        <span class="mode ${API.remote ? 'live' : 'demo-m'}">${API.remote ? 'Élő adatbázis' : 'Demó mód'}</span>
+        <span class="me">${esc(A.user.nev)}</span>
+        <button data-act="logout">${ic('logout', 18)}<span>Kijelentkezés</span></button>
+      </div>
+    </aside>
+    <main class="main" id="main"><div class="page" id="page"></div></main>
+  </div>`;
+}
+function setPage(html){ const p = $('#page'); if (p) p.innerHTML = html; }
+const loading = () => `<div class="spinner" aria-label="Betöltés"></div>`;
+const head = (title, sub, actions = '') => `<div class="ph"><div><h1>${title}</h1>${sub ? `<p>${sub}</p>` : ''}</div><div class="actions noprint">${actions}</div></div>`;
+
+async function goto(page){
+  A.page = page;
+  $$('.nav button').forEach(b => { if (b.dataset.page === page) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
+  window.scrollTo(0, 0);
+  if (page === 'home') return pageHome();
+  if (page === 'diakok') return pageDiakok();
+  if (page === 'etlap') return pageEtlap();
+  if (page === 'rendelesek') return pageRendelesek();
+  if (page === 'stat') return pageStat();
+  if (page === 'beall') return pageBeall();
+}
+
+/* =====================================================================
+   ÁTTEKINTÉS
+   ===================================================================== */
+async function pageHome(){
+  setPage(head(`Szia, ${esc(givenName(A.user.nev))}!`, 'Itt látod, hol tart a büfé és mi a teendő.') + loading());
+  const nap = nextSchoolDay(), next5 = schoolDays(5), wf = next5[0], wt = next5[4];
+  try {
+    const [d, e, b, s] = await Promise.all([
+      call('admin_diakok', { p_kereses:'', p_szerep:'', p_limit:1, p_oldal:0 }),
+      call('admin_etlap'), call('app_bufe_nap', { p_nap:nap }), call('admin_statisztika', { p_tol:wf, p_ig:wt })
+    ]);
+    if (A.page !== 'home') return;
+    const o = d.osszesen, activeMenu = e.etlap.filter(t => t.aktiv).length, open = e.beallitasok.rendeles_nyitva !== false;
+    const steps = [
+      [API.remote, 'Adatbázis bekötve', API.remote ? 'Élő adatbázist használsz.' : 'Most demó módban vagy, az adatok csak ebben a böngészőben vannak.', API.remote ? '' : (A.fixedConn ? '' : `<button class="btn sm ghost" data-act="connect">Bekötés</button>`)],
+      [o.diak > 0, 'Diákok feltöltve', o.diak ? `${o.diak} aktív diák, ${o.osztaly} osztály.` : 'Töltsd fel a diákok listáját (Excelből bemásolva is lehet).', `<button class="btn sm ghost" data-act="import">Lista feltöltése</button>`],
+      [o.bufes > 0, 'Büfés fiók', o.bufes ? `${o.bufes} büfés felhasználó.` : 'Hozz létre fiókot a büfésnek, hogy lássa a rendeléseket.', `<button class="btn sm ghost" data-act="new-user" data-role="bufes">Büfés hozzáadása</button>`],
+      [activeMenu > 0, 'Étlap', activeMenu ? `${activeMenu} termék rendelhető.` : 'Vegyél fel termékeket.', `<button class="btn sm ghost" data-act="page" data-page="etlap">Étlap</button>`],
+      [open, 'Rendelés', open ? 'A diákok most rendelhetnek.' : 'A rendelés szünetel (Beállítások).', `<button class="btn sm ghost" data-act="page" data-page="beall">Beállítások</button>`]
+    ];
+    setPage(head(`Szia, ${esc(givenName(A.user.nev))}!`, 'Itt látod, hol tart a büfé és mi a teendő.') + `
+      <div class="kpis">
+        <div class="kpi hl"><b>${b.rendeles_db}</b><span>rendelés ${esc(dayLong(nap))}</span></div>
+        <div class="kpi"><b>${ft(b.bevetel)}</b><span>fizetendő ${esc(dayLong(nap))}</span></div>
+        <div class="kpi"><b>${s.rendeles_db}</b><span>rendelés a következő 5 tanítási napra</span></div>
+        <div class="kpi"><b>${o.diak}</b><span>aktív diák</span></div>
+      </div>
+      <div class="grid2">
+        <section class="panel"><h2>Beállítási lépések</h2><ul class="check">${steps.map(([done, t, sub, btn], i) =>
+          `<li class="${done ? 'done' : ''}"><span class="dot">${done ? ic('check', 16) : i + 1}</span><span class="t"><b>${t}</b><small>${sub}</small></span>${done ? '' : btn}</li>`).join('')}</ul></section>
+        <section class="panel"><h2>Előkészítés <small>${esc(dayLong(nap))}</small></h2>
+          ${b.osszesites.length ? b.osszesites.slice(0, 8).map(r => prepRow(r, b.osszesites[0].db)).join('') : `<div class="empty"><b>Még nincs rendelés</b>erre a napra.</div>`}
+          <p style="margin-top:12px"><button class="btn sm ghost" data-act="page" data-page="rendelesek">Átvételi lista megnyitása</button></p>
+        </section>
+      </div>`);
+  } catch (e) { if (A.token) setPage(head('Áttekintés') + `<div class="warnbox">${esc(hibaSzoveg(e))}</div>`); }
+}
+const prepRow = (r, max) => `<div class="prep"><span style="font-size:24px" aria-hidden="true">${esc(r.emoji || '🍽️')}</span><div><b>${esc(r.nev)}</b><div class="bar"><i style="width:${Math.round(r.db / (max || 1) * 100)}%"></i></div></div><b class="q">${r.db}</b></div>`;
+
+/* =====================================================================
+   DIÁKOK
+   ===================================================================== */
+const ROLE_LABEL = { diak:'Diák', bufes:'Büfés', admin:'Admin' };
+async function pageDiakok(keepFocus){
+  if (!keepFocus) setPage(head('Diákok és felhasználók', 'Csak az léphet be az appba, aki itt aktívként szerepel.',
+    `<button class="btn ghost" data-act="new-user">${ic('plus', 18)} Új felhasználó</button><button class="btn" data-act="import">${ic('upload', 18)} Lista feltöltése</button>`) +
+    `<section class="panel"><div class="toolbar"><div class="search">${ic('search', 18)}<input class="input" id="dq" type="search" placeholder="Keresés név, osztály vagy azonosító szerint" value="${esc(A.q)}" aria-label="Keresés"></div><div class="chips" id="dchips"></div></div><div id="dlist">${loading()}</div></section>`);
+  try {
+    const r = await call('admin_diakok', { p_kereses:A.q, p_szerep:A.role, p_limit:50, p_oldal:A.pageNo });
+    if (A.page !== 'diakok') return;
+    A.list = r; const o = r.osszesen;
+    $('#dchips').innerHTML = [['', 'Mind', o.diak + o.bufes + o.admin + o.inaktiv], ['diak', 'Diákok', o.diak], ['bufes', 'Büfés', o.bufes], ['admin', 'Admin', o.admin], ['inaktiv', 'Inaktív', o.inaktiv]]
+      .map(([id, l, n]) => `<button class="chip" data-act="drole" data-role="${id}" aria-pressed="${A.role === id}">${l}<span class="n">${n}</span></button>`).join('');
+    const pages = Math.max(1, Math.ceil(r.talalat / 50));
+    $('#dlist').innerHTML = r.lista.length ? `<div class="tablewrap"><table>
+      <thead><tr><th>Név</th><th>Osztály</th><th class="hide-m">Oktatási azonosító</th><th>Szerep</th><th class="hide-m">Állapot</th><th></th></tr></thead>
+      <tbody>${r.lista.map(d => `<tr class="${d.aktiv ? '' : 'off'}"><td><b>${esc(d.nev)}</b></td><td>${esc(d.osztaly)}</td><td class="mono hide-m">${esc(d.azonosito)}</td>
+        <td><span class="tag ${d.szerep === 'diak' ? '' : d.szerep}">${ROLE_LABEL[d.szerep]}</span></td>
+        <td class="hide-m">${d.aktiv ? '<span class="tag ok">Aktív</span>' : '<span class="tag off">Inaktív</span>'}</td>
+        <td class="num"><button class="btn sm line" data-act="edit-user" data-id="${d.azonosito}" aria-label="${esc(d.nev)} szerkesztése">${ic('edit', 16)}<span class="hide-m">Szerkesztés</span></button></td></tr>`).join('')}</tbody></table></div>
+      <div class="pager"><span>${r.talalat} találat</span>${pages > 1 ? `<span><button class="btn sm ghost" data-act="dpage" data-d="-1"${A.pageNo ? '' : ' disabled'}>Előző</button> ${A.pageNo + 1} / ${pages} <button class="btn sm ghost" data-act="dpage" data-d="1"${A.pageNo + 1 < pages ? '' : ' disabled'}>Következő</button></span>` : ''}</div>`
+      : (o.diak + o.bufes + o.admin + o.inaktiv > 1 || A.q || A.role
+        ? `<div class="empty"><b>Nincs találat</b>Próbálj más keresést vagy szűrőt.</div>`
+        : `<div class="empty"><b>Még nincsenek diákok</b>Töltsd fel a listát: Excelből egyszerűen bemásolhatod.<br><br><button class="btn" data-act="import">${ic('upload', 18)} Lista feltöltése</button></div>`);
+  } catch (e) { if ($('#dlist')) $('#dlist').innerHTML = `<div class="warnbox">${esc(hibaSzoveg(e))}</div>`; }
+}
+
+function userModal(d, presetRole){
+  const isNew = !d;
+  d = d || { azonosito:'', nev:'', osztaly: presetRole === 'bufes' ? 'büfé' : '', szerep: presetRole || 'diak', aktiv:true };
+  openModal(isNew ? 'Új felhasználó' : 'Felhasználó szerkesztése', `
+    <form id="user-form" novalidate>
+      <div class="row2">
+        <label class="field"><span>Név</span><input class="input" id="u-nev" value="${esc(d.nev)}"></label>
+        <label class="field"><span>Osztály</span><input class="input" id="u-osztaly" value="${esc(d.osztaly)}" placeholder="pl. 11.B"></label>
+      </div>
+      <div class="row2">
+        <label class="field"><span>Oktatási azonosító</span><input class="input" id="u-id" inputmode="numeric" maxlength="11" value="${esc(d.azonosito)}"${isNew ? '' : ' readonly'}>
+          ${isNew ? '<small>Büfés dolgozónak, akinek nincs, adj egy kitalált 11 jegyű számot (pl. 90000000001), és mondd meg neki.</small>' : ''}</label>
+        <label class="field"><span>Születési dátum ${isNew ? '' : '(csak ha módosítod)'}</span><input class="input" id="u-birth" inputmode="numeric" maxlength="10" placeholder="ÉÉÉÉ-HH-NN"><small>Ez lesz a jelszava az első belépéshez.</small></label>
+      </div>
+      <div class="row2">
+        <label class="field"><span>Szerep</span><select class="select input" id="u-role">
+          ${['diak','bufes','admin'].map(r => `<option value="${r}"${d.szerep === r ? ' selected' : ''}>${ROLE_LABEL[r]}${r === 'bufes' ? ' (látja a rendeléseket)' : r === 'admin' ? ' (mindent kezel)' : ''}</option>`).join('')}</select></label>
+        <div class="field"><span>Állapot</span><div class="inline"><button type="button" class="switch" role="switch" id="u-aktiv" aria-checked="${d.aktiv}" aria-label="Aktív"></button><span id="u-aktiv-l">${d.aktiv ? 'Aktív, beléphet' : 'Inaktív, nem léphet be'}</span></div></div>
+      </div>
+      <p class="err" id="merr" role="alert"></p>
+      <div class="mf">
+        ${isNew ? '' : `<div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="btn sm line" data-act="kick" data-id="${esc(d.azonosito)}">Kiléptetés minden eszközről</button><button type="button" class="btn sm danger" data-act="del-user" data-id="${esc(d.azonosito)}">${ic('trash', 16)} Törlés</button></div>`}
+        <div class="r"><button type="button" class="btn ghost" data-act="close-modal">Mégsem</button><button class="btn" type="submit">Mentés</button></div>
+      </div>
+    </form>`);
+  A.editNew = isNew;
+}
+async function saveUser(){
+  const birthRaw = $('#u-birth').value.trim(), birth = birthRaw ? normBirth(birthRaw) : null;
+  const merr = m => { $('#merr').textContent = m; };
+  if (birthRaw && !birth) return merr('A születési dátumot így add meg: 2007-10-20');
+  const args = { p_azonosito:$('#u-id').value.replace(/\D/g, ''), p_nev:$('#u-nev').value.trim(), p_osztaly:$('#u-osztaly').value.trim(),
+    p_szerep:$('#u-role').value, p_aktiv:$('#u-aktiv').getAttribute('aria-checked') === 'true', p_szuletes:birth, p_uj:!!A.editNew };
+  if (args.p_azonosito.length !== 11) return merr(HIBAK.rossz_azonosito);
+  if (!args.p_nev) return merr(HIBAK.hianyzo_nev);
+  if (A.editNew && !birth) return merr(HIBAK.hianyzo_szuletes);
+  try { await call('admin_diak_mentes', args); closeModal(); toast('Mentve'); if (A.page === 'diakok') pageDiakok(true); else goto(A.page); }
+  catch (e) { merr(hibaSzoveg(e)); }
+}
+
+/* ---------- lista feltöltése ---------- */
+function parseTable(text){
+  text = String(text || '').replace(/^﻿/, '').replace(/\r\n?/g, '\n').trim();
+  if (!text) return [];
+  const first = text.split('\n')[0];
+  const delim = first.includes('\t') ? '\t' : (first.split(';').length >= first.split(',').length ? ';' : ',');
+  const rows = []; let row = [], cell = '', inQ = false;
+  for (let i = 0; i < text.length; i++){
+    const ch = text[i];
+    if (inQ){ if (ch === '"'){ if (text[i + 1] === '"'){ cell += '"'; i++; } else inQ = false; } else cell += ch; continue; }
+    if (ch === '"' && cell === '') inQ = true;
+    else if (ch === delim){ row.push(cell.trim()); cell = ''; }
+    else if (ch === '\n'){ row.push(cell.trim()); rows.push(row); row = []; cell = ''; }
+    else cell += ch;
+  }
+  row.push(cell.trim()); rows.push(row);
+  return rows.filter(r => r.some(c => c !== ''));
+}
+function guessMap(header){
+  const m = { azonosito:-1, nev:-1, vezetek:-1, kereszt:-1, osztaly:-1, szuletes:-1 };
+  header.forEach((h, i) => {
+    const s = h.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    if (m.azonosito < 0 && /(oktatasi|azonosito|om\b|diakigazolvany)/.test(s)) m.azonosito = i;
+    else if (m.szuletes < 0 && /szulet|szul\.|birth/.test(s)) m.szuletes = i;
+    else if (m.osztaly < 0 && /osztaly|class|csoport/.test(s)) m.osztaly = i;
+    else if (m.vezetek < 0 && /vezetek/.test(s)) m.vezetek = i;
+    else if (m.kereszt < 0 && /kereszt|uto/.test(s)) m.kereszt = i;
+    else if (m.nev < 0 && /nev|name/.test(s)) m.nev = i;
+  });
+  return m;
+}
+function excelDate(v){
+  const s = String(v).trim();
+  if (/^\d{5}(\.\d+)?$/.test(s)){ const d = new Date(Date.UTC(1899, 11, 30) + Math.floor(+s) * 86400000); return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`; }
+  return normBirth(s);
+}
+function analyse(){
+  const I = A.imp, rows = I.rows, m = I.map;
+  const body = I.hasHeader ? rows.slice(1) : rows;
+  const seen = new Set();
+  I.items = body.map((r, i) => {
+    const sor = i + (I.hasHeader ? 2 : 1);
+    const az = String(r[m.azonosito] || '').replace(/\D/g, '');
+    const nev = m.nev >= 0 ? String(r[m.nev] || '').trim() : [r[m.vezetek], r[m.kereszt]].filter(Boolean).join(' ').trim();
+    const osztaly = m.osztaly >= 0 ? String(r[m.osztaly] || '').trim() : '';
+    const sz = m.szuletes >= 0 ? excelDate(r[m.szuletes] || '') : null;
+    let hiba = '';
+    if (az.length !== 11) hiba = 'Az azonosító nem 11 számjegy';
+    else if (!nev) hiba = 'Hiányzik a név';
+    else if (!sz) hiba = 'Hibás születési dátum';
+    else if (seen.has(az)) hiba = 'Kétszer szerepel a listában';
+    if (!hiba) seen.add(az);
+    return { sor, azonosito:az, nev, osztaly, szuletes:sz, hiba };
+  });
+}
+function importModal(){
+  A.imp = { step:1, text:'', rows:[], map:null, hasHeader:true, items:[], inaktival:false, done:null };
+  renderImport();
+}
+function renderImport(){
+  const I = A.imp;
+  const bar = `<div class="stepper-h" aria-hidden="true">${[1,2,3].map(n => `<span class="${I.step >= n ? 'on' : ''}"></span>`).join('')}</div>`;
+  if (I.step === 1){
+    openModal('Diáklista feltöltése', bar + `
+      <p class="lead">Kell hozzá: <b>oktatási azonosító</b>, <b>név</b>, <b>osztály</b> és <b>születési dátum</b>. A Kréta-exportot vagy bármilyen Excel-táblát használhatsz.</p>
+      <label class="field"><span>1. lehetőség: jelöld ki a táblázatot Excelben (fejléccel együtt), másold ki, és illeszd be ide</span>
+        <textarea class="input" id="imp-text" placeholder="Oktatási azonosító&#9;Név&#9;Osztály&#9;Születési dátum&#10;72000000001&#9;Nagy Anna&#9;11.B&#9;2007.10.20.">${esc(I.text)}</textarea></label>
+      <label class="field"><span>2. lehetőség: CSV-fájl (Excelben: Fájl → Mentés másként → CSV UTF-8)</span><input class="input" type="file" id="imp-file" accept=".csv,.txt,text/csv,text/plain"></label>
+      <p><button type="button" class="linkbtn" data-act="imp-sample">Minta beillesztése, hogy lásd a formátumot</button></p>
+      <p class="err" id="merr" role="alert"></p>
+      <div class="mf"><div class="r"><button class="btn ghost" data-act="close-modal">Mégsem</button><button class="btn" data-act="imp-next">Tovább</button></div></div>`, true);
+    return;
+  }
+  if (I.step === 2){
+    const header = I.rows[0] || [], cols = header.map((h, i) => `${I.hasHeader ? (h || (i + 1) + '. oszlop') : (i + 1) + '. oszlop'}`);
+    const sel = (key, label, optional) => `<label class="field"><span>${label}</span><select class="select input" data-map="${key}"><option value="-1">${optional ? '– nincs –' : '– válassz –'}</option>${cols.map((c, i) => `<option value="${i}"${I.map[key] === i ? ' selected' : ''}>${esc(c)}</option>`).join('')}</select></label>`;
+    const good = I.items.filter(x => !x.hiba), bad = I.items.filter(x => x.hiba);
+    openModal('Diáklista feltöltése', bar + `
+      <p class="lead">Ellenőrizd, hogy melyik oszlopban mi van. Ha kell, állítsd át.</p>
+      <label class="cb"><input type="checkbox" id="imp-hdr"${I.hasHeader ? ' checked' : ''}><span>Az első sor fejléc (oszlopnevek)</span></label>
+      <div class="mapgrid">${sel('azonosito', 'Oktatási azonosító')}${sel('szuletes', 'Születési dátum')}${sel('osztaly', 'Osztály', true)}${
+        I.map.nev >= 0 || (I.map.vezetek < 0 && I.map.kereszt < 0) ? sel('nev', 'Teljes név') : `<div>${sel('vezetek', 'Vezetéknév')}${sel('kereszt', 'Keresztnév')}</div>`}</div>
+      <div class="sumrow"><span class="tag ok">${good.length} rendben</span>${bad.length ? `<span class="tag off">${bad.length} hibás, ezek kimaradnak</span>` : ''}</div>
+      <div class="prevtable"><table><thead><tr><th>Sor</th><th>Név</th><th>Osztály</th><th>Azonosító</th><th>Születés</th><th>Megjegyzés</th></tr></thead><tbody>
+        ${[...bad.slice(0, 50), ...good.slice(0, 30)].map(x => `<tr class="${x.hiba ? 'bad' : ''}"><td>${x.sor}</td><td>${esc(x.nev)}</td><td>${esc(x.osztaly)}</td><td class="mono">${esc(x.azonosito)}</td><td>${esc(x.szuletes || '')}</td><td>${esc(x.hiba || '')}</td></tr>`).join('')}
+      </tbody></table></div>
+      ${good.length > 30 ? `<p class="lead" style="margin-top:6px">…és még ${good.length - 30} sor.</p>` : ''}
+      <label class="cb"><input type="checkbox" id="imp-inakt"${I.inaktival ? ' checked' : ''}><span><b>Tanévváltás: aki nincs ebben a listában, azt inaktiválom</b><small>Pl. a ballagott vagy kiiratkozott diákok nem tudnak többet belépni. Büfés és admin fiókokat nem érint.</small></span></label>
+      <p class="err" id="merr" role="alert"></p>
+      <div class="mf"><button class="btn ghost" data-act="imp-back">Vissza</button><div class="r"><button class="btn" data-act="imp-go"${good.length ? '' : ' disabled'}>${good.length} diák feltöltése</button></div></div>`, true);
+    return;
+  }
+  if (I.step === 3){
+    const d = I.done;
+    openModal('Diáklista feltöltése', bar + (d ? `
+      <div class="okbox">${ic('check', 18)} Kész!</div>
+      <div class="kpis" style="grid-template-columns:repeat(3,1fr)"><div class="kpi"><b>${d.uj}</b><span>új diák</span></div><div class="kpi"><b>${d.frissitett}</b><span>frissítve</span></div><div class="kpi"><b>${d.inaktivalt}</b><span>inaktiválva</span></div></div>
+      ${d.hibak.length ? `<div class="warnbox">${d.hibak.length} sor kimaradt:<br>${d.hibak.slice(0, 20).map(h => `${h.sor}. sor: ${esc(h.hiba)}`).join('<br>')}${d.hibak.length > 20 ? '<br>…' : ''}</div>` : ''}
+      <p class="lead">A diákok mostantól beléphetnek az appba az oktatási azonosítójukkal és a születési dátumukkal.</p>
+      <div class="mf"><div class="r"><button class="btn" data-act="imp-close">Bezárás</button></div></div>`
+      : `<p class="lead" id="imp-status">Feltöltés folyamatban…</p><div class="progress"><i id="imp-prog"></i></div><p class="lead">Ne zárd be az ablakot.</p>`), true);
+  }
+}
+async function runImport(){
+  const I = A.imp, good = I.items.filter(x => !x.hiba);
+  I.step = 3; I.done = null; renderImport();
+  const res = { uj:0, frissitett:0, inaktivalt:0, hibak: I.items.filter(x => x.hiba).map(x => ({ sor:x.sor, hiba:x.hiba })) };
+  try {
+    for (let i = 0; i < good.length; i += CHUNK){
+      const part = good.slice(i, i + CHUNK).map(x => ({ sor:x.sor, azonosito:x.azonosito, nev:x.nev, osztaly:x.osztaly, szuletes:x.szuletes }));
+      const r = await call('admin_diakok_feltoltes', { p_lista:part });
+      res.uj += r.uj; res.frissitett += r.frissitett; res.hibak.push(...r.hibak);
+      const p = $('#imp-prog'); if (p) p.style.width = Math.round(Math.min(i + CHUNK, good.length) / good.length * 100) + '%';
+      const st = $('#imp-status'); if (st) st.textContent = `Feltöltés folyamatban… ${Math.min(i + CHUNK, good.length)} / ${good.length}`;
+    }
+    if (I.inaktival){ const r = await call('admin_diakok_inaktival', { p_megmarad: good.map(x => x.azonosito) }); res.inaktivalt = r.inaktivalt; }
+    res.hibak.sort((a, b) => a.sor - b.sor);
+    I.done = res; renderImport();
+  } catch (e) {
+    I.step = 2; renderImport(); $('#merr').textContent = 'A feltöltés megszakadt: ' + hibaSzoveg(e) + ` (${res.uj + res.frissitett} sor már bekerült, nyugodtan indítsd újra).`;
+  }
+}
+
+/* =====================================================================
+   ÉTLAP
+   ===================================================================== */
+async function pageEtlap(){
+  setPage(head('Étlap', 'Amit itt beállítasz, azonnal látszik a diákok appjában.', `<button class="btn" data-act="new-prod">${ic('plus', 18)} Új termék</button>`) + loading());
+  try {
+    A.etlap = await call('admin_etlap');
+    if (A.page !== 'etlap') return;
+    const e = A.etlap, cats = [...new Set(e.etlap.map(t => t.kategoria))];
+    setPage(head('Étlap', 'Amit itt beállítasz, azonnal látszik a diákok appjában.', `<button class="btn" data-act="new-prod">${ic('plus', 18)} Új termék</button>`) + `
+      <section class="panel"><h2>Termékek <small>${e.etlap.filter(t => t.aktiv).length} rendelhető, ${e.etlap.filter(t => !t.aktiv).length} rejtett</small></h2>
+        ${e.etlap.length ? cats.map(c => `<h3 class="cat-h">${esc(c)}</h3>${e.etlap.filter(t => t.kategoria === c).map(t => `
+          <div class="prod${t.aktiv ? '' : ' off'}"><span class="emo" aria-hidden="true">${esc(t.emoji)}</span>
+            <div><b>${esc(t.nev)}</b><small>${esc(t.leiras || '')}${t.vega ? ' · 🌱 vega' : ''}${t.allergenek.length ? ' · ' + esc(t.allergenek.join(', ')) : ''}</small></div>
+            <span class="price">${ft(t.ar)}</span>
+            <button class="switch sw" role="switch" aria-checked="${t.aktiv}" data-act="prod-toggle" data-id="${t.id}" aria-label="${esc(t.nev)} rendelhető"></button>
+            <button class="btn sm line ed" data-act="edit-prod" data-id="${t.id}">${ic('edit', 16)}<span class="hide-m">Szerkesztés</span></button>
+          </div>`).join('')}`).join('') : `<div class="empty"><b>Az étlap üres</b>Vegyél fel termékeket az „Új termék” gombbal.</div>`}
+      </section>
+      <section class="panel"><h2>Szünetek <small>ezek közül választ a diák átvételkor</small></h2>
+        ${e.szunetek.map(s => `<form class="brk" data-brk="${s.id}"><input class="input" name="nev" value="${esc(s.nev)}" aria-label="Szünet neve"><input class="input" name="ido" value="${esc(s.ido)}" aria-label="Időpont" placeholder="9:40">
+          <button type="button" class="switch" role="switch" name="aktiv" aria-checked="${s.aktiv}" data-act="brk-toggle" aria-label="${esc(s.nev)} választható"></button>
+          <button class="btn sm ghost" type="submit">Mentés</button></form>`).join('')}
+      </section>`);
+  } catch (e) { if (A.token) setPage(head('Étlap') + `<div class="warnbox">${esc(hibaSzoveg(e))}</div>`); }
+}
+function prodModal(t){
+  const isNew = !t;
+  t = t || { id:null, nev:'', leiras:'', ar:'', kategoria:'', emoji:'🍽️', vega:false, allergenek:[], aktiv:true, sorrend:null };
+  const cats = [...new Set((A.etlap ? A.etlap.etlap : []).map(x => x.kategoria).concat(['Reggeli','Meleg étel','Snack','Italok']))];
+  openModal(isNew ? 'Új termék' : 'Termék szerkesztése', `
+    <form id="prod-form" novalidate>
+      <div class="row3">
+        <label class="field"><span>Név</span><input class="input" id="p-nev" value="${esc(t.nev)}" placeholder="pl. Sonkás szendvics"></label>
+        <label class="field"><span>Ár (Ft)</span><input class="input" id="p-ar" inputmode="numeric" value="${esc(t.ar)}" placeholder="490"></label>
+        <label class="field"><span>Kategória</span><input class="input" id="p-kat" list="p-cats" value="${esc(t.kategoria)}" placeholder="Reggeli"><datalist id="p-cats">${cats.map(c => `<option value="${esc(c)}">`).join('')}</datalist></label>
+      </div>
+      <label class="field"><span>Leírás</span><input class="input" id="p-leiras" value="${esc(t.leiras)}" placeholder="Rövid leírás, pl. mi van benne"></label>
+      <div class="field"><span>Ikon</span><div class="inline"><input class="input" id="p-emoji" value="${esc(t.emoji)}" style="width:80px;font-size:22px;text-align:center" aria-label="Ikon"><small>Válassz egyet, vagy írj be bármilyen emojit.</small></div>
+        <div class="emojis">${EMOJIK.map(e => `<button type="button" data-act="pick-emoji" data-e="${e}" aria-label="${e}">${e}</button>`).join('')}</div></div>
+      <div class="field"><span>Allergének</span><div class="allerg">${ALLERGENEK.concat(t.allergenek.filter(a => !ALLERGENEK.includes(a))).map(a => `<label><input type="checkbox" name="all" value="${esc(a)}"${t.allergenek.includes(a) ? ' checked' : ''}>${esc(a)}</label>`).join('')}</div></div>
+      <div class="row2">
+        <div class="field"><span>Vegetáriánus</span><div class="inline"><button type="button" class="switch" role="switch" id="p-vega" aria-checked="${t.vega}" aria-label="Vegetáriánus"></button></div></div>
+        <div class="field"><span>Rendelhető</span><div class="inline"><button type="button" class="switch" role="switch" id="p-aktiv" aria-checked="${t.aktiv}" aria-label="Rendelhető"></button><small>Kikapcsolva elrejti az étlapról, de nem törli.</small></div></div>
+      </div>
+      <p class="err" id="merr" role="alert"></p>
+      <div class="mf">${isNew ? '' : `<button type="button" class="btn sm danger" data-act="del-prod" data-id="${t.id}">${ic('trash', 16)} Törlés</button>`}
+        <div class="r"><button type="button" class="btn ghost" data-act="close-modal">Mégsem</button><button class="btn" type="submit">Mentés</button></div></div>
+    </form>`);
+  A.editProd = t;
+}
+async function saveProd(){
+  const t = A.editProd, ar = parseInt(String($('#p-ar').value).replace(/\D/g, ''), 10);
+  const args = { p_id:t.id, p_nev:$('#p-nev').value.trim(), p_leiras:$('#p-leiras').value.trim(), p_ar:isNaN(ar) ? null : ar,
+    p_kategoria:$('#p-kat').value.trim(), p_emoji:$('#p-emoji').value.trim(), p_vega:$('#p-vega').getAttribute('aria-checked') === 'true',
+    p_allergenek:$$('#prod-form input[name=all]:checked').map(x => x.value), p_aktiv:$('#p-aktiv').getAttribute('aria-checked') === 'true', p_sorrend:t.sorrend };
+  if (!args.p_nev) return $('#merr').textContent = HIBAK.hianyzo_nev;
+  if (args.p_ar == null) return $('#merr').textContent = 'Add meg az árat.';
+  try { await call('admin_termek_mentes', args); closeModal(); toast('Termék mentve'); pageEtlap(); }
+  catch (e) { $('#merr').textContent = hibaSzoveg(e); }
+}
+
+/* =====================================================================
+   RENDELÉSEK (átvételi lista)
+   ===================================================================== */
+async function pageRendelesek(){
+  A.day = A.day || nextSchoolDay();
+  const nav = `<div class="daynav noprint"><button class="btn sm ghost" data-act="dstep" data-d="-1" aria-label="Előző nap">‹</button><input class="input" type="date" id="rday" value="${A.day}" aria-label="Nap"><button class="btn sm ghost" data-act="dstep" data-d="1" aria-label="Következő nap">›</button><button class="btn sm ghost" data-act="dtoday">Ma</button></div>`;
+  const h = head(`Rendelések – ${esc(dayLong(A.day))}`, 'Előkészítési lista és átvételi lista szünetenként.', `<button class="btn ghost" data-act="rrefresh">${ic('refresh', 18)} Frissítés</button><button class="btn" data-act="print">${ic('printer', 18)} Nyomtatás</button>`);
+  setPage(h + nav + loading());
+  try {
+    const d = await call('app_bufe_nap', { p_nap:A.day });
+    if (A.page !== 'rendelesek') return;
+    A.dayData = d;
+    const max = d.osszesites.length ? d.osszesites[0].db : 1;
+    setPage(h + nav + `<div style="height:14px"></div>
+      <div class="kpis" style="grid-template-columns:repeat(3,1fr)"><div class="kpi hl"><b>${d.rendeles_db}</b><span>rendelés</span></div><div class="kpi"><b>${d.darab}</b><span>darab</span></div><div class="kpi"><b>${ft(d.bevetel)}</b><span>fizetendő összesen</span></div></div>
+      ${d.rendeles_db ? `<div class="grid2">
+        <section class="panel"><h2>Előkészítés</h2>${d.osszesites.map(r => prepRow(r, max)).join('')}</section>
+        <section class="panel"><h2>Átvételi lista</h2>${d.atvetel.filter(b => b.rendelesek.length).map(b => `
+          <h3 class="brk-h"><span>${esc(b.szunet)}, ${esc(b.ido)}</span><small>${b.rendelesek.length} rendelés</small></h3>
+          <div class="tablewrap"><table><tbody>${b.rendelesek.map(o => `<tr><td><b>${esc(o.nev)}</b><br><small style="color:var(--muted)">${esc(o.tetelek)}</small></td><td>${esc(o.osztaly)}</td><td class="num">${ft(o.osszeg)}</td></tr>`).join('')}</tbody></table></div>`).join('')}
+        </section></div>` : `<section class="panel"><div class="empty"><b>Erre a napra nincs rendelés</b>Válassz másik napot.</div></section>`}`);
+  } catch (e) { if (A.token) setPage(h + nav + `<div class="warnbox">${esc(hibaSzoveg(e))}</div>`); }
+}
+
+/* =====================================================================
+   STATISZTIKA
+   ===================================================================== */
+async function pageStat(){
+  const [tol, ig, label] = rangeDates(A.range);
+  const chips = `<div class="chips noprint" style="margin-bottom:16px">${[['week','Ez a hét'],['last','Előző hét'],['month','Ez a hónap'],['30','Elmúlt 30 nap']].map(([id, l]) => `<button class="chip" data-act="range" data-r="${id}" aria-pressed="${A.range === id}">${l}</button>`).join('')}</div>`;
+  const h = head('Statisztika', `${label}: ${esc(tol.replace(/-/g, '.'))}. – ${esc(ig.replace(/-/g, '.'))}.`);
+  setPage(h + chips + loading());
+  try {
+    const s = await call('admin_statisztika', { p_tol:tol, p_ig:ig });
+    if (A.page !== 'stat') return;
+    const days = []; for (let d = tol; d <= ig; d = addDays(d, 1)){ const w = parseDay(d).getDay(); if (w !== 0 && w !== 6) days.push(d); }
+    const byDay = Object.fromEntries(s.naponta.map(x => [String(x.nap).slice(0, 10), x]));
+    const maxDb = Math.max(1, ...s.naponta.map(x => x.db));
+    const topMax = s.top.length ? s.top[0].db : 1;
+    setPage(h + chips + `
+      <div class="kpis"><div class="kpi hl"><b>${s.rendeles_db}</b><span>leadott rendelés</span></div><div class="kpi"><b>${ft(s.bevetel)}</b><span>forgalom (büfében fizetve)</span></div>
+        <div class="kpi"><b>${s.rendelo_diak}</b><span>rendelő diák</span></div><div class="kpi"><b>${s.lemondott}</b><span>lemondott rendelés</span></div></div>
+      <div class="grid2">
+        <section class="panel"><h2>Rendelések naponta</h2>
+          <div class="bars" role="img" aria-label="Rendelések száma naponta">${days.map(d => { const x = byDay[d] || { db:0, osszeg:0 }; return `<div class="b" title="${esc(dayLong(d))}: ${x.db} rendelés, ${ft(x.osszeg)}"><em>${x.db || ''}</em><i style="height:${Math.round(x.db / maxDb * 100)}%"></i></div>`; }).join('')}</div>
+          <div class="blabels" aria-hidden="true">${days.map(d => `<span>${days.length > 12 ? parseDay(d).getDate() : WD_S[parseDay(d).getDay()] + ' ' + parseDay(d).getDate()}</span>`).join('')}</div>
+        </section>
+        <section class="panel"><h2>Legnépszerűbb termékek</h2>${s.top.length ? s.top.map(t => prepRow(t, topMax)).join('') : `<div class="empty"><b>Nincs adat</b>ebben az időszakban.</div>`}</section>
+      </div>
+      <p class="noprint" style="margin-top:12px"><button class="btn ghost" data-act="stat-csv">Másolás Excelbe</button></p>`);
+    A.stat = { s, days, byDay, tol, ig };
+  } catch (e) { if (A.token) setPage(h + chips + `<div class="warnbox">${esc(hibaSzoveg(e))}</div>`); }
+}
+
+/* =====================================================================
+   BEÁLLÍTÁSOK
+   ===================================================================== */
+async function pageBeall(){
+  setPage(head('Beállítások', 'A változások azonnal érvényesek a diákok appjában.') + loading());
+  try {
+    const e = await call('admin_etlap');
+    if (A.page !== 'beall') return;
+    const b = e.beallitasok;
+    setPage(head('Beállítások', 'A változások azonnal érvényesek a diákok appjában.') + `
+      <section class="panel"><h2>Rendelés</h2>
+        <div class="set"><div><b>Rendelés engedélyezése</b><small>Kapcsold ki szünidőre, kirándulásra vagy ha a büfé zárva van. A diákok ilyenkor nem tudnak rendelni.</small></div>
+          <div class="inline"><button class="switch" role="switch" id="s-nyitva" aria-checked="${b.rendeles_nyitva !== false}" aria-label="Rendelés engedélyezése"></button><span id="s-nyitva-l">${b.rendeles_nyitva !== false ? 'Lehet rendelni' : 'Szünetel'}</span></div></div>
+        <div class="set"><div><b>Aznapi rendelési határidő</b><small>Az adott napra eddig lehet rendelni reggel. A következő napokra bármikor.</small></div>
+          <input class="input" type="time" id="s-hatarido" value="${esc(String(b.rendelesi_hatarido || '07:30').padStart(5, '0'))}"></div>
+        <div class="set"><div><b>Lemondási határidő</b><small>Ennyi nappal a rendelt nap előtt, a nap végéig mondható le a rendelés. Utána a diáknak ki kell fizetnie.</small><p class="preview" id="s-prev"></p></div>
+          <select class="select input" id="s-lemond">${[0,1,2,3,5,7].map(n => `<option value="${n}"${+b.lemondas_napokkal === n ? ' selected' : ''}>${n === 0 ? 'Aznap (a rendelt napon)' : n + ' nappal előtte'}</option>`).join('')}</select></div>
+        <div class="set"><div><b>Legtöbb darab egy rendelésben</b><small>Túlzó rendelések ellen.</small></div>
+          <input class="input" type="number" min="1" max="50" id="s-max" value="${esc(b.max_tetel)}"></div>
+        <div class="set"><div><b>Iskola neve</b><small>A diákok a profiljukban és az adatkezelésnél látják.</small></div>
+          <input class="input" id="s-iskola" value="${esc(b.iskola_nev || SCHOOL_DEFAULT)}"></div>
+        <p class="err" id="serr" role="alert"></p>
+        <p><button class="btn" data-act="save-settings">Beállítások mentése</button></p>
+      </section>
+      <section class="panel"><h2>Adatbázis</h2>
+        ${API.remote ? `<p><span class="tag ok">Élő adatbázis</span> <code>${esc(API.url.replace(/^https?:\/\//, ''))}</code></p>
+          <p class="lead" style="margin-top:8px">A diák appba ugyanez a cím és a publishable key kerül.</p>`
+        : `<p><span class="tag bufes">Demó mód</span> Az adatok csak ebben a böngészőben vannak, a diákok appja nem látja őket.</p>`}
+        <p style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">${A.fixedConn ? '' : `<button class="btn ghost" data-act="connect">${ic('db', 18)} ${API.remote ? 'Kapcsolat módosítása' : 'Saját adatbázis bekötése'}</button>`}
+          ${isDemo() ? `<button class="btn line" data-act="demo-reset">${ic('refresh', 18)} Demó adatok visszaállítása</button>` : ''}</p>
+      </section>`);
+    updatePreview();
+  } catch (e) { if (A.token) setPage(head('Beállítások') + `<div class="warnbox">${esc(hibaSzoveg(e))}</div>`); }
+}
+function updatePreview(){
+  const p = $('#s-prev'), s = $('#s-lemond'); if (!p || !s) return;
+  const n = +s.value, mon = schoolDays(15).find(d => parseDay(d).getDay() === 1 && d > addDays(todayIso(), 7)) || nextSchoolDay();
+  const dl = addDays(mon, -n);
+  p.textContent = `Példa: a ${dayLong(mon)} napra leadott rendelés ${dayLong(dl)} végéig mondható le.`;
+}
+async function saveSettings(){
+  const serr = m => { $('#serr').textContent = m || ''; };
+  const hat = $('#s-hatarido').value.replace(/^0(\d)/, '$1');
+  const max = parseInt($('#s-max').value, 10);
+  if (!/^([01]?\d|2[0-3]):[0-5]\d$/.test(hat)) return serr(HIBAK.rossz_ido);
+  if (!(max >= 1 && max <= 50)) return serr('A darabszám 1 és 50 között lehet.');
+  try {
+    await call('admin_beallitas', { p_kulcs:'rendeles_nyitva', p_ertek: $('#s-nyitva').getAttribute('aria-checked') === 'true' });
+    await call('admin_beallitas', { p_kulcs:'rendelesi_hatarido', p_ertek: hat });
+    await call('admin_beallitas', { p_kulcs:'lemondas_napokkal', p_ertek: +$('#s-lemond').value });
+    await call('admin_beallitas', { p_kulcs:'max_tetel', p_ertek: max });
+    await call('admin_beallitas', { p_kulcs:'iskola_nev', p_ertek: $('#s-iskola').value.trim() || SCHOOL_DEFAULT });
+    serr(''); toast('Beállítások mentve');
+  } catch (e) { serr(hibaSzoveg(e)); }
+}
+
+/* =====================================================================
+   MODAL
+   ===================================================================== */
+let lastFocus = null;
+function openModal(title, body, wide){
+  const inner = `<div class="mdl${wide ? ' wide' : ''}" role="dialog" aria-modal="true" aria-label="${esc(title)}"><div class="mh"><h2>${esc(title)}</h2><button class="x" data-act="close-modal" aria-label="Bezárás">${ic('x', 18)}</button></div>${body}</div>`;
+  const back = $('#modal .mback');
+  if (back) back.innerHTML = inner;
+  else { lastFocus = document.activeElement; $('#modal').innerHTML = `<div class="mback" data-act="mback">${inner}</div>`; }
+  const f = $('#modal input:not([readonly]):not([type=checkbox]), #modal textarea'); (f || $('#modal .x')).focus();
+}
+function closeModal(){ $('#modal').innerHTML = ''; if (lastFocus && lastFocus.focus) try { lastFocus.focus(); } catch (e) {} }
+function confirmBox(text, okLabel, onOk){
+  const back = $('#modal').innerHTML;
+  const host = $('#modal .mf') || $('#modal .mdl');
+  const box = document.createElement('div');
+  box.className = 'warnbox'; box.innerHTML = `${esc(text)}<div style="display:flex;gap:8px;margin-top:10px"><button type="button" class="btn sm ghost" data-c="no">Mégsem</button><button type="button" class="btn sm danger" data-c="yes">${esc(okLabel)}</button></div>`;
+  host.replaceWith(box);
+  box.addEventListener('click', ev => { const c = ev.target.closest('[data-c]'); if (!c) return; ev.stopPropagation(); if (c.dataset.c === 'yes') onOk(); else $('#modal').innerHTML = back; });
+}
+
+/* =====================================================================
+   ESEMÉNYEK
+   ===================================================================== */
+let qTimer;
+document.addEventListener('click', async e => {
+  const el = e.target.closest('[data-act]'); if (!el) return;
+  const a = el.dataset.act;
+  switch (a){
+    case 'mback': if (e.target === el) closeModal(); break;
+    case 'close-modal': closeModal(); break;
+    case 'page': closeModal(); goto(el.dataset.page); break;
+    case 'logout': logout(''); break;
+    case 'connect': A.err = ''; A.view = 'connect'; render(); break;
+    case 'use-demo': if (LIVE_BUILD) break; store.del(CONNKEY); API.configure('', ''); A.err = ''; sess.del(); A.view = 'boot'; render(); boot(); break;
+    case 'demo-login': if (isDemo()) doLogin('70000000000', '1980-01-01'); break;
+    case 'demo-reset': if (isDemo()){ Mock.reset(); toast('Demó adatok visszaállítva'); logout(''); } break;
+    // diákok
+    case 'drole': A.role = el.dataset.role; A.pageNo = 0; pageDiakok(true); break;
+    case 'dpage': A.pageNo = Math.max(0, A.pageNo + +el.dataset.d); pageDiakok(true); break;
+    case 'new-user': userModal(null, el.dataset.role); break;
+    case 'edit-user': { const d = A.list && A.list.lista.find(x => x.azonosito === el.dataset.id); if (d) userModal(d); break; }
+    case 'kick': try { const r = await call('admin_diak_kileptetes', { p_azonosito:el.dataset.id }); toast(`Kiléptetve ${r.kileptetve} eszközről`); } catch (err) { fail(err); } break;
+    case 'del-user': confirmBox('Biztosan törlöd? A rendelései is törlődnek. Ha csak le akarod tiltani, inkább állítsd inaktívra.', 'Végleges törlés', async () => {
+      try { await call('admin_diak_torles', { p_azonosito:el.dataset.id }); closeModal(); toast('Törölve'); pageDiakok(true); } catch (err) { fail(err); } }); break;
+    case 'import': importModal(); break;
+    case 'imp-sample': $('#imp-text').value = 'Oktatási azonosító\tNév\tOsztály\tSzületési dátum\n72000000901\tMinta Márton\t9.A\t2010.05.05.\n72000000902\tPélda Piroska\t10.B\t2009.11.23.'; break;
+    case 'imp-next': {
+      const I = A.imp; I.text = $('#imp-text').value;
+      I.rows = parseTable(I.text);
+      if (I.rows.length < 1) return $('#merr').textContent = 'Illessz be egy táblázatot, vagy válassz egy CSV-fájlt.';
+      I.hasHeader = !I.rows[0].some(c => /^\d{11}$/.test(String(c).replace(/\s/g, '')));
+      I.map = I.hasHeader ? guessMap(I.rows[0]) : { azonosito:0, nev:1, vezetek:-1, kereszt:-1, osztaly:2, szuletes:3 };
+      if (I.hasHeader && I.map.azonosito < 0 && I.map.nev < 0){ I.hasHeader = false; I.map = { azonosito:0, nev:1, vezetek:-1, kereszt:-1, osztaly:2, szuletes:3 }; }
+      analyse(); I.step = 2; renderImport(); break;
+    }
+    case 'imp-back': A.imp.step = 1; renderImport(); break;
+    case 'imp-go': A.imp.inaktival = $('#imp-inakt').checked;
+      if (A.imp.inaktival) return confirmBox(`Minden olyan diák inaktív lesz, aki nincs ebben a ${A.imp.items.filter(x => !x.hiba).length} fős listában. Biztos vagy benne?`, 'Igen, feltöltés', runImport);
+      runImport(); break;
+    case 'imp-close': closeModal(); A.q = ''; A.role = ''; A.pageNo = 0; goto('diakok'); break;
+    // étlap
+    case 'new-prod': prodModal(null); break;
+    case 'edit-prod': prodModal(A.etlap.etlap.find(t => t.id === el.dataset.id)); break;
+    case 'pick-emoji': $('#p-emoji').value = el.dataset.e; break;
+    case 'del-prod': confirmBox('Biztosan törlöd ezt a terméket? A korábbi rendelésekben megmarad. Ha csak ideiglenesen nem kapható, kapcsold ki inkább.', 'Törlés', async () => {
+      try { await call('admin_termek_torles', { p_id:el.dataset.id }); closeModal(); toast('Termék törölve'); pageEtlap(); } catch (err) { fail(err); } }); break;
+    case 'prod-toggle': {
+      const t = A.etlap.etlap.find(x => x.id === el.dataset.id); if (!t) break;
+      const on = el.getAttribute('aria-checked') !== 'true';
+      el.setAttribute('aria-checked', on); el.closest('.prod').classList.toggle('off', !on);
+      try { await call('admin_termek_mentes', { p_id:t.id, p_nev:t.nev, p_leiras:t.leiras, p_ar:t.ar, p_kategoria:t.kategoria, p_emoji:t.emoji, p_vega:t.vega, p_allergenek:t.allergenek, p_aktiv:on, p_sorrend:t.sorrend });
+            t.aktiv = on; toast(on ? `${t.nev}: rendelhető` : `${t.nev}: elrejtve az étlapról`); }
+      catch (err) { el.setAttribute('aria-checked', !on); el.closest('.prod').classList.toggle('off', on); fail(err); }
+      break;
+    }
+    case 'brk-toggle': el.setAttribute('aria-checked', el.getAttribute('aria-checked') !== 'true'); break;
+    // rendelések
+    case 'dstep': { let d = addDays(A.day, +el.dataset.d); while ([0, 6].includes(parseDay(d).getDay())) d = addDays(d, +el.dataset.d); A.day = d; pageRendelesek(); break; }
+    case 'dtoday': A.day = todayIso(); pageRendelesek(); break;
+    case 'rrefresh': pageRendelesek(); break;
+    case 'print': window.print(); break;
+    // statisztika
+    case 'range': A.range = el.dataset.r; pageStat(); break;
+    case 'stat-csv': { const st = A.stat; if (!st) break;
+      const csv = 'Nap\tRendelések\tÖsszeg (Ft)\n' + st.days.map(d => { const x = st.byDay[d] || { db:0, osszeg:0 }; return `${d}\t${x.db}\t${x.osszeg}`; }).join('\n') + '\n\nTermék\tDarab\n' + st.s.top.map(t => `${t.nev}\t${t.db}`).join('\n');
+      openModal('Statisztika táblázatként', `<p class="lead">Jelöld ki az egészet (Ctrl+A), másold ki (Ctrl+C), és illeszd be egy Excel-táblába.</p><textarea class="input" id="stat-text" readonly>${esc(csv)}</textarea><div class="mf"><div class="r"><button class="btn" data-act="close-modal">Bezárás</button></div></div>`, true);
+      const ta = $('#stat-text'); if (ta){ ta.focus(); ta.select(); } break; }
+    // beállítások
+    case 'save-settings': saveSettings(); break;
+  }
+});
+// kapcsolók a modalban és a beállításoknál
+document.addEventListener('click', e => {
+  const sw = e.target.closest('.switch'); if (!sw || sw.dataset.act) return;
+  if (!['u-aktiv','p-vega','p-aktiv','s-nyitva'].includes(sw.id)) return;
+  const on = sw.getAttribute('aria-checked') !== 'true'; sw.setAttribute('aria-checked', on);
+  if (sw.id === 'u-aktiv') $('#u-aktiv-l').textContent = on ? 'Aktív, beléphet' : 'Inaktív, nem léphet be';
+  if (sw.id === 's-nyitva') $('#s-nyitva-l').textContent = on ? 'Lehet rendelni' : 'Szünetel';
+});
+
+document.addEventListener('submit', async e => {
+  e.preventDefault();
+  const f = e.target;
+  if (f.id === 'login-form'){
+    const id = $('#l-id').value.replace(/\D/g, ''), birth = normBirth($('#l-birth').value);
+    if (id.length !== 11){ A.err = HIBAK.rossz_azonosito; return render(); }
+    if (!birth){ A.err = 'A születési dátumot így add meg: 1980-01-01'; render(); $('#l-id').value = id; return; }
+    return doLogin(id, birth);
+  }
+  if (f.id === 'first-form'){
+    const nev = $('#f-nev').value.trim(), id = $('#f-id').value.replace(/\D/g, ''), birth = normBirth($('#f-birth').value);
+    const err = m => { $('#err').textContent = m; };
+    if (!nev) return err(HIBAK.hianyzo_nev);
+    if (id.length !== 11) return err(HIBAK.rossz_azonosito);
+    if (!birth) return err('A születési dátumot így add meg: 1980-01-01');
+    try { const r = await API.call('admin_elso_letrehozas', { p_azonosito:id, p_nev:nev, p_szuletes:birth }); enter(r.token, r.felhasznalo); toast('Admin létrehozva. Üdv!'); }
+    catch (x) { err(hibaSzoveg(x)); }
+    return;
+  }
+  if (f.id === 'conn-form'){
+    let url = $('#c-url').value.trim().replace(/\/+$/, '').replace(/\/rest\/v1$/, ''); const key = $('#c-key').value.trim();
+    if (url && !/^https?:\/\//.test(url)) url = 'https://' + url;
+    if (!url || !key){ A.err = 'Add meg mindkét értéket.'; render(); return; }
+    if (/service_role|sb_secret_/.test(key) || (key.startsWith('eyJ') && /service_role/.test(atobSafe(key.split('.')[1])))){ A.err = 'Ez a titkos (secret / service_role) kulcs! Azt ne használd, a publishable (anon) kulcs kell.'; render(); return; }
+    A.busy = true; A.err = ''; render(); $('#c-url').value = url; $('#c-key').value = key;
+    const prev = [API.url, API.key]; API.configure(url, key);
+    try {
+      const r = await API.call('admin_van_admin', {});
+      store.set(CONNKEY, { url, key }); A.busy = false; sess.del(); A.token = null;
+      A.view = r.van ? 'login' : 'first'; render(); toast('Kapcsolat rendben');
+    } catch (x) {
+      API.configure(prev[0], prev[1]); A.busy = false;
+      A.err = x.code === 'halozat' ? 'Nem érem el ezt a címet. Ellenőrizd a Project URL-t.'
+            : /admin_van_admin|schema cache|Could not find/i.test(x.message) ? 'A kapcsolat működik, de az adatbázisban még nincsenek meg a BüféApp táblái. Futtasd le az SQL-fájlt az SQL Editorban.'
+            : /Invalid API key|No API key|401|JWT/i.test(x.message) ? 'A kulcs nem jó. A publishable (anon) kulcsot másold be.'
+            : 'Nem sikerült: ' + hibaSzoveg(x);
+      render(); $('#c-url').value = url; $('#c-key').value = key;
+    }
+    return;
+  }
+  if (f.id === 'user-form') return saveUser();
+  if (f.id === 'prod-form') return saveProd();
+  if (f.classList.contains('brk')){
+    const id = f.dataset.brk, nev = f.querySelector('[name=nev]').value.trim(), ido = f.querySelector('[name=ido]').value.trim(), aktiv = f.querySelector('[name=aktiv]').getAttribute('aria-checked') === 'true';
+    try { await call('admin_szunet_mentes', { p_id:id, p_nev:nev, p_ido:ido, p_aktiv:aktiv }); toast('Szünet mentve'); } catch (x) { fail(x); }
+  }
+});
+function atobSafe(s){ try { return atob(String(s || '').replace(/-/g, '+').replace(/_/g, '/')); } catch (e) { return ''; } }
+
+document.addEventListener('input', e => {
+  const t = e.target;
+  if (t.id === 'dq'){ clearTimeout(qTimer); qTimer = setTimeout(() => { A.q = t.value.trim(); A.pageNo = 0; pageDiakok(true); }, 250); }
+  if (['l-birth','f-birth','u-birth'].includes(t.id)){
+    const d = t.value.replace(/\D/g, '').slice(0, 8);
+    t.value = d.slice(0, 4) + (d.length > 4 ? '-' + d.slice(4, 6) : '') + (d.length > 6 ? '-' + d.slice(6, 8) : '');
+  }
+  if (['l-id','f-id','u-id'].includes(t.id)) t.value = t.value.replace(/\D/g, '').slice(0, 11);
+});
+document.addEventListener('change', e => {
+  const t = e.target;
+  if (t.id === 'rday' && t.value){ A.day = t.value; pageRendelesek(); }
+  if (t.id === 's-lemond') updatePreview();
+  if (t.id === 'imp-file' && t.files && t.files[0]){
+    const r = new FileReader();
+    r.onload = () => {
+      let txt = String(r.result || '');
+      if (/\uFFFD/.test(txt)){ const r2 = new FileReader(); r2.onload = () => { $('#imp-text').value = r2.result; }; r2.readAsText(t.files[0], 'windows-1250'); return; }
+      $('#imp-text').value = txt;
+    };
+    r.readAsText(t.files[0], 'utf-8');
+  }
+  if (t.id === 'imp-hdr'){ const I = A.imp; I.hasHeader = t.checked; I.map = I.hasHeader ? guessMap(I.rows[0]) : { azonosito:0, nev:1, vezetek:-1, kereszt:-1, osztaly:2, szuletes:3 }; analyse(); renderImport(); }
+  if (t.dataset && t.dataset.map){ A.imp.map[t.dataset.map] = +t.value; if (t.dataset.map === 'nev' && +t.value >= 0){ A.imp.map.vezetek = -1; A.imp.map.kereszt = -1; } analyse(); renderImport(); }
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('#modal .mback') && !(A.imp && A.imp.step === 3 && !A.imp.done)) closeModal(); });
+
+/* ---------- indítás ---------- */
+$('#wm').innerHTML = `<img src="${LOGO_URL}" alt="">`;
+render();
+boot();
+
+})();
+</script>
+</body>
+</html>

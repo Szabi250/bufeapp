@@ -1,0 +1,39 @@
+{
+  "name": "BüféApp – Kaposvári SZC Eötvös Loránd Technikum",
+  "short_name": "BüféApp",
+  "lang": "hu",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#eef1fb",
+  "theme_color": "#101a68",
+  "description": "Iskolai büfé előrendelés: rendelj előre, a büfében vedd át és fizesd ki.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
