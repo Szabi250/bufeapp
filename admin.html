@@ -386,6 +386,12 @@ label.cb small{display:block;color:var(--muted)}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
+/* átvételi gombok a Rendelések oldalon */
+.pkb2{display:inline-flex;gap:6px}
+.btn.okfull{background:#0f7a3d;border-color:#0f7a3d;color:#fff}
+tr.pk-done td{background:rgba(15,122,61,.07)}
+tr.pk-miss td{background:rgba(184,50,50,.07)}
+
 </style>
 </head>
 <body>
@@ -406,7 +412,8 @@ label.cb small{display:block;color:var(--muted)}
    ===================================================================== */
 const BUFE_CONFIG = {
   supabaseUrl: 'https://skrcjreevrrwuceaoauq.supabase.co',
-  supabaseKey: 'sb_publishable_aFhrLQU9hWZYIBJTl9jbTQ_kdi-5K4J'
+  supabaseKey: 'sb_publishable_aFhrLQU9hWZYIBJTl9jbTQ_kdi-5K4J',
+  pushKey: 'BMe2be2brEfSlxA6NZYyrwLPjbYoPMVsECmgM4f8wcFAY0S1VwY2S5eg_xKRdI19QmZ7wzXDNkjM3nLY8bMvn2I'          // Web Push publikus (VAPID) kulcs – ez is nyilvános
 };
 
 /* Éles változatban (build.py --live) igaz: ilyenkor a demó mód teljesen ki van kapcsolva. */
@@ -1087,7 +1094,8 @@ async function pageRendelesek(){
         <section class="panel"><h2>Előkészítés</h2>${d.osszesites.map(r => prepRow(r, max)).join('')}</section>
         <section class="panel"><h2>Átvételi lista</h2>${d.atvetel.filter(b => b.rendelesek.length).map(b => `
           <h3 class="brk-h"><span>${esc(b.szunet)}, ${esc(b.ido)}</span><small>${b.rendelesek.length} rendelés</small></h3>
-          <div class="tablewrap"><table><tbody>${b.rendelesek.map(o => `<tr><td><b>${esc(o.nev)}</b><br><small style="color:var(--muted)">${esc(o.tetelek)}</small></td><td>${esc(o.osztaly)}</td><td class="num">${ft(o.osszeg)}</td></tr>`).join('')}</tbody></table></div>`).join('')}
+          <div class="tablewrap"><table><tbody>${b.rendelesek.map(o => `<tr class="${o.atvetel === 'atvette' ? 'pk-done' : o.atvetel === 'nem_vette_at' ? 'pk-miss' : ''}"><td><b>${esc(o.nev)}</b><br><small style="color:var(--muted)">${esc(o.tetelek)}</small></td><td>${esc(o.osztaly)}</td><td class="num">${ft(o.osszeg)}</td>
+            <td class="num noprint"><div class="pkb2"><button class="btn sm ${o.atvetel === 'atvette' ? 'okfull' : 'line'}" data-act="pk-ok" data-id="${o.id}" title="Átvette">${ic('check', 16)}<span class="hide-m">Átvette</span></button><button class="btn sm ${o.atvetel === 'nem_vette_at' ? 'danger' : 'line'}" data-act="pk-no" data-id="${o.id}" title="Nem vette át">${ic('x', 16)}<span class="hide-m">Nem</span></button></div></td></tr>`).join('')}</tbody></table></div>`).join('')}
         </section></div>` : `<section class="panel"><div class="empty"><b>Erre a napra nincs rendelés</b>Válassz másik napot.</div></section>`}`);
   } catch (e) { if (A.token) setPage(h + nav + `<div class="warnbox">${esc(hibaSzoveg(e))}</div>`); }
 }
@@ -1143,6 +1151,16 @@ async function pageBeall(){
           <input class="input" type="number" min="1" max="50" id="s-max" value="${esc(b.max_tetel)}"></div>
         <div class="set"><div><b>Iskola neve</b><small>A diákok a profiljukban és az adatkezelésnél látják.</small></div>
           <input class="input" id="s-iskola" value="${esc(b.iskola_nev || SCHOOL_DEFAULT)}"></div>
+      </section>
+      <section class="panel"><h2>Értesítések <small>emlékeztető a diákok telefonjára</small></h2>
+        <div class="set"><div><b>Értesítések küldése</b><small>Ha kikapcsolod, nem készül több emlékeztető és figyelmeztetés.</small></div>
+          <div class="inline"><button class="switch" role="switch" id="s-ert" aria-checked="${b.ertesitesek_be !== false}" aria-label="Értesítések küldése"></button><span id="s-ert-l">${b.ertesitesek_be !== false ? 'Bekapcsolva' : 'Kikapcsolva'}</span></div></div>
+        <div class="set"><div><b>Reggeli összegző időpontja</b><small>Ekkor kapja a diák, hogy mit és melyik szünetben vesz át aznap.</small></div>
+          <input class="input" id="s-osszegzo" value="${esc(b.napi_osszegzo || '07:45')}" placeholder="07:45"></div>
+        <div class="set"><div><b>Emlékeztető a szünet előtt</b><small>Ennyi perccel a szünet kezdete előtt szól, hogy menjen a büfébe.</small></div>
+          <input class="input" type="number" min="0" max="30" id="s-emperc" value="${esc(b.emlekezteto_perc != null ? b.emlekezteto_perc : 5)}"></div>
+        <div class="set"><div><b>Büfé zárása</b><small>Ez szerepel az üzenetben: eddig veheti át, aki kihagyta a szünetét.</small></div>
+          <input class="input" id="s-zaras" value="${esc(b.bufe_zaras || '14:00')}" placeholder="14:00"></div>
         <p class="err" id="serr" role="alert"></p>
         <p><button class="btn" data-act="save-settings">Beállítások mentése</button></p>
       </section>
@@ -1173,6 +1191,13 @@ async function saveSettings(){
     await call('admin_beallitas', { p_kulcs:'rendelesi_hatarido', p_ertek: hat });
     await call('admin_beallitas', { p_kulcs:'lemondas_napokkal', p_ertek: +$('#s-lemond').value });
     await call('admin_beallitas', { p_kulcs:'max_tetel', p_ertek: max });
+    const osszegzo = $('#s-osszegzo').value.trim(), zaras = $('#s-zaras').value.trim(), emperc = +$('#s-emperc').value;
+    if (!/^([01]?\d|2[0-3]):[0-5]\d$/.test(osszegzo) || !/^([01]?\d|2[0-3]):[0-5]\d$/.test(zaras)) return serr('Az időpontot így add meg: 07:45');
+    if (!(emperc >= 0 && emperc <= 30)) return serr('Az emlékeztető 0 és 30 perc között lehet.');
+    await call('admin_beallitas', { p_kulcs:'napi_osszegzo', p_ertek: osszegzo });
+    await call('admin_beallitas', { p_kulcs:'bufe_zaras', p_ertek: zaras });
+    await call('admin_beallitas', { p_kulcs:'emlekezteto_perc', p_ertek: emperc });
+    await call('admin_beallitas', { p_kulcs:'ertesitesek_be', p_ertek: $('#s-ert').getAttribute('aria-checked') === 'true' });
     await call('admin_beallitas', { p_kulcs:'iskola_nev', p_ertek: $('#s-iskola').value.trim() || SCHOOL_DEFAULT });
     serr(''); toast('Beállítások mentve');
   } catch (e) { serr(hibaSzoveg(e)); }
@@ -1286,6 +1311,13 @@ document.addEventListener('click', async e => {
     case 'dstep': { let d = addDays(A.day, +el.dataset.d); while ([0, 6].includes(parseDay(d).getDay())) d = addDays(d, +el.dataset.d); A.day = d; pageRendelesek(); break; }
     case 'dtoday': A.day = todayIso(); pageRendelesek(); break;
     case 'rrefresh': pageRendelesek(); break;
+    case 'pk-ok': case 'pk-no': {
+      const id = +el.dataset.id, atvette = el.dataset.act === 'pk-ok';
+      try { await call('app_bufe_atvetel', { p_id:id, p_atvette:atvette });
+            toast(atvette ? 'Átvette' : 'Nem vette át – a diák üzenetet kap'); pageRendelesek(); }
+      catch (err) { fail(err); }
+      break;
+    }
     case 'print': window.print(); break;
     // statisztika
     case 'range': A.range = el.dataset.r; pageStat(); break;
@@ -1304,6 +1336,7 @@ document.addEventListener('click', e => {
   const on = sw.getAttribute('aria-checked') !== 'true'; sw.setAttribute('aria-checked', on);
   if (sw.id === 'u-aktiv') $('#u-aktiv-l').textContent = on ? 'Aktív, beléphet' : 'Inaktív, nem léphet be';
   if (sw.id === 's-nyitva') $('#s-nyitva-l').textContent = on ? 'Lehet rendelni' : 'Szünetel';
+  if (sw.id === 's-ert') $('#s-ert-l').textContent = on ? 'Bekapcsolva' : 'Kikapcsolva';
 });
 
 document.addEventListener('submit', async e => {

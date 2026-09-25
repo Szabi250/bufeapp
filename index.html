@@ -402,6 +402,29 @@ p{margin:0}
 .pick-hint{display:flex;align-items:center;gap:6px;color:var(--amber-ink);background:var(--amber-bg);border-radius:12px;padding:8px 12px;font-size:14px;font-weight:600;margin:4px 0 6px}
 .cartbar span.t small{display:block;font-weight:600;font-size:12.5px;opacity:.85}
 
+/* értesítés-sáv és átvételi lista (büfés) */
+.warnbar{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:#fdeaea;color:#8e1f1f;
+  border:1px solid rgba(184,50,50,.35);border-radius:14px;padding:10px 14px;margin:0 16px 8px;font:inherit;font-size:15px;font-weight:600}
+.warnbar svg{flex:none;color:#b83232}
+.warnbar span{flex:1}
+@media (prefers-color-scheme:dark){ .warnbar{background:#3a1717;color:#ffd9d9;border-color:rgba(255,120,120,.3)} }
+.okw{color:#0f7a3d;font-weight:700}
+.pklist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.pkrow{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px 14px;display:flex;
+  flex-direction:column;gap:10px}
+.pkrow.done{border-color:rgba(15,122,61,.45);background:rgba(15,122,61,.07)}
+.pkrow.miss{border-color:rgba(184,50,50,.45);background:rgba(184,50,50,.07)}
+.pkwho b{font-size:16px}
+.pkwho span{color:var(--muted);font-size:14px}
+.pkwho small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.pkbtns{display:flex;gap:8px}
+.pkb{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 8px;border-radius:12px;
+  border:1px solid var(--line);background:var(--tint);color:var(--ink);font:inherit;font-weight:700;font-size:15px;cursor:pointer}
+.pkb.ok[aria-pressed=true]{background:#0f7a3d;border-color:#0f7a3d;color:#fff}
+.pkb.no[aria-pressed=true]{background:#b83232;border-color:#b83232;color:#fff}
+.pkb svg{flex:none}
+.row .grow small{display:block;font-weight:500;color:var(--muted);font-size:13px;margin-top:2px}
+
 </style>
 </head>
 <body>
@@ -422,7 +445,8 @@ p{margin:0}
    ===================================================================== */
 const BUFE_CONFIG = {
   supabaseUrl: 'https://skrcjreevrrwuceaoauq.supabase.co',
-  supabaseKey: 'sb_publishable_aFhrLQU9hWZYIBJTl9jbTQ_kdi-5K4J'
+  supabaseKey: 'sb_publishable_aFhrLQU9hWZYIBJTl9jbTQ_kdi-5K4J',
+  pushKey: 'BMe2be2brEfSlxA6NZYyrwLPjbYoPMVsECmgM4f8wcFAY0S1VwY2S5eg_xKRdI19QmZ7wzXDNkjM3nLY8bMvn2I'          // Web Push publikus (VAPID) kulcs – ez is nyilvános
 };
 
 /* Éles változatban (build.py --live) igaz: ilyenkor a demó mód teljesen ki van kapcsolva. */
@@ -689,10 +713,51 @@ function cancelWarn(day){
     : warnHTML(`<b>Ezt a rendelést már nem lehet lemondani.</b> A lemondási határidő (${deadlineText(day)}) lejárt, ezért a büfében ki kell fizetned.`);
 }
 
-function addNotif(title, body){
-  S.notifs.unshift({ id: Date.now() + Math.random(), title, body, read:false, ts:Date.now() });
+function addNotif(title, body, extra){
+  S.notifs.unshift(Object.assign({ id: Date.now() + Math.random(), title, body, read:false, ts:Date.now() }, extra || {}));
   S.notifs = S.notifs.slice(0, 40);
   saveNotifs();
+}
+/* A szervertől kapott üzenetek (emlékeztető, „nem vetted át”) bekerülnek az értesítések közé. */
+function mergeServerNotifs(list){
+  if (!Array.isArray(list) || !list.length) return;
+  const seen = new Set(S.notifs.map(n => n.sid).filter(x => x != null));
+  let uj = 0;
+  list.slice().reverse().forEach(e => {
+    if (seen.has(e.id)) return;
+    addNotif(e.cim, e.szoveg, { sid:e.id, tipus:e.tipus });
+    uj++;
+  });
+  if (uj) saveNotifs();
+}
+const warnNotif = () => S.notifs.find(n => !n.read && n.tipus === 'nem_vette_at');
+
+/* ---------- telefonos értesítés (Web Push) ---------- */
+const pushLehet = () => !isDemo() && !!BUFE_CONFIG.pushKey && 'serviceWorker' in navigator
+  && 'PushManager' in window && 'Notification' in window;
+const b64ToU8 = b64 => {
+  const pad = '='.repeat((4 - b64.length % 4) % 4);
+  const raw = atob((b64 + pad).replace(/-/g, '+').replace(/_/g, '/'));
+  return Uint8Array.from([...raw].map(c => c.charCodeAt(0)));
+};
+const subKulcs = (sub, nev) => {
+  const k = sub.getKey ? sub.getKey(nev) : null;
+  return k ? btoa(String.fromCharCode(...new Uint8Array(k))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '') : '';
+};
+async function pushBe(){
+  const reg = await navigator.serviceWorker.ready;
+  const eng = await Notification.requestPermission();
+  if (eng !== 'granted') return { ok:false, kod:'tiltva' };
+  let sub = await reg.pushManager.getSubscription();
+  if (!sub) sub = await reg.pushManager.subscribe({ userVisibleOnly:true, applicationServerKey: b64ToU8(BUFE_CONFIG.pushKey) });
+  await API.call('app_push_regisztral', { p_token:S.token, p_endpoint:sub.endpoint,
+    p_p256dh:subKulcs(sub, 'p256dh'), p_auth:subKulcs(sub, 'auth') });
+  return { ok:true };
+}
+async function pushKi(){
+  const reg = await navigator.serviceWorker.ready;
+  const sub = await reg.pushManager.getSubscription();
+  if (sub){ try { await API.call('app_push_torles', { p_token:S.token, p_endpoint:sub.endpoint }); } catch (e) {} await sub.unsubscribe(); }
 }
 
 /* =====================================================================
@@ -876,6 +941,7 @@ async function loadData(initial){
     const d = await API.call('app_adatok', { p_token: S.token });
     setServerTime(d.ma, d.perc);
     S.data = d; S.offline = false;
+    mergeServerNotifs(d.ertesitesek);
     S.user = d.felhasznalo;
     Object.assign(S.device, { nev:d.felhasznalo.nev, osztaly:d.felhasznalo.osztaly, szerep:d.felhasznalo.szerep });
     store.set(DEVKEY, S.device);
@@ -936,6 +1002,7 @@ function viewMain(){
     ${staff ? '' : `<button class="bell" data-act="notifs" aria-label="Értesítések${unread ? `, ${unread} olvasatlan` : ''}">${ic('bell', 22)}${unread ? '<span class="dot"></span>' : ''}</button>`}
   </header>
   ${S.offline ? `<p class="offline" role="status">${ic('alert', 18)} Nincs kapcsolat a szerverrel, a legutóbbi adatokat látod. <button data-act="retry">Újra</button></p>` : ''}
+  ${warnNotif() ? `<button class="warnbar" data-act="notifs" role="alert">${ic('alert', 18)}<span>${esc(warnNotif().body)}</span></button>` : ''}
   ${isDemo() ? `<p class="demobar">Demó mód: kitalált adatok, csak ezen az eszközön.</p>` : ''}
   <main id="content">${contentHTML()}</main>
   <div id="cartslot"></div>
@@ -1032,7 +1099,8 @@ function orderCard(o){
   const n = o.tetelek.reduce((a, i) => a + i.db, 0);
   const future = o.statusz === 'leadva' && o.nap >= todayIso();
   return `<button class="order" data-act="order" data-oid="${o.id}" aria-label="Rendelés ${dayLong(o.nap)}, ${st.label}">
-    <div class="o-main"><b>${dayLong(o.nap)}</b><small>${esc(br.nev)}${br.ido ? ', ' + esc(br.ido) : ''}</small><small>${n} tétel</small>${future ? (canCancel(o) ? `<small class="cw">Lemondható eddig: ${deadlineText(o.nap)}</small>` : `<small class="cw">Már nem mondható le</small>`) : ''}</div>
+    <div class="o-main"><b>${dayLong(o.nap)}</b><small>${esc(br.nev)}${br.ido ? ', ' + esc(br.ido) : ''}</small><small>${n} tétel</small>${
+      o.atvetel === 'atvette' ? `<small class="okw">Átvetted</small>` : o.atvetel === 'nem_vette_at' ? `<small class="cw">Nem vetted át</small>` : ''}${future ? (canCancel(o) ? `<small class="cw">Lemondható eddig: ${deadlineText(o.nap)}</small>` : `<small class="cw">Már nem mondható le</small>`) : ''}</div>
     <div class="o-side"><b>${ft(o.osszeg)}</b><span class="pill ${st.cls}">${st.label}</span></div>
     ${ic('chev', 20)}</button>`;
 }
@@ -1062,7 +1130,9 @@ function viewProfile(){
   <dl class="kv"><div><dt>Oktatási azonosító</dt><dd>${maskId(u.azonosito)}</dd></div></dl>
   ${staff ? '' : `
   <div class="week"><span>Heti rendelt összeg</span><b>${ft(wk)}</b><small>Fizetendő a büfénél, ${wr.label}</small></div>
-  <div class="row"><span class="grow" id="vlabel">Vega alapbeállítás</span><button class="switch" role="switch" aria-checked="${!!S.prefs.vega}" aria-labelledby="vlabel" data-act="vega-pref"></button></div>`}
+  <div class="row"><span class="grow" id="vlabel">Vega alapbeállítás</span><button class="switch" role="switch" aria-checked="${!!S.prefs.vega}" aria-labelledby="vlabel" data-act="vega-pref"></button></div>
+  ${pushLehet() ? `<div class="row"><span class="grow" id="plabel">Értesítés a telefonra<small>Emlékeztető a szünet előtt, és ha nem vetted át a rendelésedet.</small></span><button class="switch" role="switch" aria-checked="${!!S.prefs.push}" aria-labelledby="plabel" data-act="push-pref"></button></div>`
+    : `<p class="sub-s">A telefonos értesítéshez tedd fel az appot a főképernyőre (Megosztás → Főképernyőhöz adás), és nyisd meg onnan.</p>`}`}
   <button class="row" data-act="privacy">${ic('shield', 20)}<span class="grow">Adatkezelés és adataim törlése</span>${ic('chev', 18)}</button>
   <button class="row" data-act="lock">${ic('lock', 20)}<span class="grow">Zárolás</span>${ic('chev', 18)}</button>
   <button class="row danger" data-act="logout">${ic('logout', 20)}<span class="grow">Kijelentkezés erről az eszközről</span></button>
@@ -1077,8 +1147,17 @@ function viewStaff(){
   const rows = d.osszesites || [], max = rows.length ? rows[0].db : 1;
   const prep = rows.length ? rows.map(r => `<div class="prep"><span style="font-size:26px" aria-hidden="true">${esc(r.emoji || '🍽️')}</span><div><b>${esc(r.nev)}</b><div class="bar"><i style="width:${Math.round(r.db / max * 100)}%"></i></div></div><b class="q">${r.db}</b></div>`).join('')
     : `<div class="empty"><b>Erre a napra még nincs rendelés</b>Válassz másik napot.</div>`;
-  const pk = (d.atvetel || []).filter(b => b.rendelesek.length).map(b =>
-    `<h3>${esc(b.szunet)}, ${esc(b.ido)}</h3><ul>${b.rendelesek.map(o => `<li><b>${esc(o.nev)}</b> (${esc(o.osztaly)}) · ${ft(o.osszeg)}<small>${esc(o.tetelek)}</small></li>`).join('')}</ul>`).join('');
+  const pkRow = o => `<li class="pkrow${o.atvetel ? ' ' + (o.atvetel === 'atvette' ? 'done' : 'miss') : ''}">
+    <div class="pkwho"><b>${esc(o.nev)}</b> <span>(${esc(o.osztaly)}) · ${ft(o.osszeg)}</span><small>${esc(o.tetelek)}</small></div>
+    <div class="pkbtns">
+      <button class="pkb ok" data-act="pk-ok" data-id="${o.id}" aria-pressed="${o.atvetel === 'atvette'}">${ic('check', 18)} Átvette</button>
+      <button class="pkb no" data-act="pk-no" data-id="${o.id}" aria-pressed="${o.atvetel === 'nem_vette_at'}">${ic('x', 18)} Nem vette át</button>
+    </div></li>`;
+  const pk = (d.atvetel || []).filter(b => b.rendelesek.length).map(b => {
+    const kesz = b.rendelesek.filter(o => o.atvetel).length;
+    return `<h3>${esc(b.szunet)}, ${esc(b.ido)} <small>${kesz}/${b.rendelesek.length} kész</small></h3>
+      <ul class="pklist">${b.rendelesek.map(pkRow).join('')}</ul>`;
+  }).join('');
   return `${head}
   <div class="stats"><div class="stat"><b>${d.rendeles_db}</b><span>rendelés</span></div><div class="stat"><b>${d.darab}</b><span>darab</span></div><div class="stat"><b>${ft(d.bevetel)}</b><span>fizetendő</span></div></div>
   <h2 class="group-h">Előkészítés</h2>${prep}
@@ -1209,7 +1288,7 @@ function wipeData(){
   logout('Az adataidat töröltük erről az eszközről.');
 }
 
-document.addEventListener('click', e => {
+document.addEventListener('click', async e => {
   const el = e.target.closest('[data-act]'); if (!el) return;
   const a = el.dataset.act;
   switch (a){
@@ -1237,6 +1316,31 @@ document.addEventListener('click', e => {
       window.scrollTo(0, y); break;
     }
     case 'staff-refresh': loadStaff(S.day, true); break;
+    case 'pk-ok': case 'pk-no': {
+      const id = el.dataset.id, atvette = el.dataset.act === 'pk-ok';
+      const nap = S.staff[S.day]; if (!nap) break;
+      const sor = (nap.atvetel || []).flatMap(b => b.rendelesek).find(o => String(o.id) === String(id));
+      const elozo = sor ? sor.atvetel : null;
+      if (sor){ sor.atvetel = atvette ? 'atvette' : 'nem_vette_at'; rerenderContent(); }
+      try { await API.call('app_bufe_atvetel', { p_token:S.token, p_id:+id, p_atvette:atvette });
+            toast(atvette ? 'Átvette' : 'Nem vette át – üzenetet kap'); }
+      catch (e) { if (sor){ sor.atvetel = elozo; rerenderContent(); } toast(hibaSzoveg(e)); }
+      break;
+    }
+    case 'push-pref': {
+      const be = !S.prefs.push;
+      if (!pushLehet()) return toast('Ez az eszköz nem támogatja a telefonos értesítést.');
+      if (be){
+        try { const r = await pushBe();
+              if (!r.ok){ toast('Az értesítés le van tiltva. Engedélyezd a böngésző beállításaiban.'); break; }
+              S.prefs.push = true; savePrefs(); render(); toast('Értesítések bekapcsolva'); }
+        catch (e) { toast('Nem sikerült bekapcsolni: ' + hibaSzoveg(e)); }
+      } else {
+        try { await pushKi(); } catch (e) {}
+        S.prefs.push = false; savePrefs(); render(); toast('Értesítések kikapcsolva');
+      }
+      break;
+    }
     case 'filter': if (el.dataset.f === 'fav') S.fav = !S.fav; else S.vega = !S.vega; refreshMenu(); break;
     case 'fav': { const id = el.dataset.pid; S.favs = S.favs.includes(id) ? S.favs.filter(x => x !== id) : [...S.favs, id]; saveFavs(); const y = window.scrollY; refreshMenu(); window.scrollTo(0, y); break; }
     case 'add': addToCart(el.dataset.pid, 1); break;
@@ -1248,7 +1352,9 @@ document.addEventListener('click', e => {
     case 'cancel-ask': S.sheet.confirm = true; renderSheet(); break;
     case 'cancel-no': S.sheet.confirm = false; renderSheet(); break;
     case 'cancel-yes': cancelOrder(S.sheet.oid); break;
-    case 'notifs': { const un = S.notifs.filter(n => !n.read).map(n => n.id); S.notifs.forEach(n => n.read = true); saveNotifs(); render(); openSheet('notifs', { unread:un }); break; }
+    case 'notifs': { const un = S.notifs.filter(n => !n.read).map(n => n.id); S.notifs.forEach(n => n.read = true); saveNotifs(); render(); openSheet('notifs', { unread:un });
+      if (S.notifs.some(n => n.sid != null)) API.call('app_ertesites_olvasva', { p_token:S.token }).catch(() => {});
+      break; }
     case 'vega-pref': S.prefs.vega = !S.prefs.vega; S.vega = S.prefs.vega; savePrefs(); render(); break;
     case 'privacy': openSheet('privacy'); break;
     case 'wipe-ask': S.sheet.confirm = true; renderSheet(); break;
